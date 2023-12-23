@@ -1,0 +1,25 @@
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/models/auto/auto_factory.py:472: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:57<00:57, 57.37s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:12<00:00, 32.73s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:12<00:00, 36.43s/it]
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/utils/hub.py:374: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/configuration_utils.py:381: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/configuration_utils.py:386: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py:655: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+Map:   0%|          | 0/6706 [00:00<?, ? examples/s]Map:  14%|█▍        | 925/6706 [00:00<00:00, 9190.93 examples/s]Map:  32%|███▏      | 2171/6706 [00:00<00:00, 8584.80 examples/s]Map:  46%|████▌     | 3091/6706 [00:00<00:00, 8823.29 examples/s]Map:  60%|█████▉    | 4000/6706 [00:00<00:00, 8690.22 examples/s]Map:  75%|███████▍  | 5000/6706 [00:00<00:00, 8905.92 examples/s]Map:  89%|████████▉ | 6000/6706 [00:00<00:00, 9070.51 examples/s]                                                                 Map:   0%|          | 0/746 [00:00<?, ? examples/s]                                                   Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/qlora_vicuna.py", line 856, in <module>
+    train()
+  File "/gpfs/fs001/cbica/home/xjia/qlora/qlora_vicuna.py", line 725, in train
+    data_module = make_data_module(tokenizer=tokenizer, args=args)
+  File "/gpfs/fs001/cbica/home/xjia/qlora/qlora_vicuna.py", line 655, in make_data_module
+    if args.do_eval or args.do_predict:
+  File "/gpfs/fs001/cbica/home/xjia/qlora/qlora_vicuna.py", line 655, in make_data_module
+    if args.do_eval or args.do_predict:
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit

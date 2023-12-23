@@ -1,0 +1,16 @@
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:36<00:36, 36.88s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:50<00:00, 22.92s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:50<00:00, 25.02s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:20<00:20, 20.72s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:30<00:00, 14.34s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:30<00:00, 15.30s/it]
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/samantha12_generate.py", line 144, in <module>
+    pt, base_response = generate(base_model, test_df['instruction'][i], test_df["input"][i], prompt)
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/samantha12_generate.py", line 118, in generate
+    outputs = model.generate(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/utils.py", line 1693, in generate
+    return self.sample(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/utils.py", line 2816, in sample
+    raise ValueError("If `eos_token_id` is defined, make sure that `pad_token_id` is defined.")
+ValueError: If `eos_token_id` is defined, make sure that `pad_token_id` is defined.

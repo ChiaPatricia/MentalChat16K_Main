@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/qlora_models_mc_generate.py", line 5, in <module>
+    from peft import PeftModel
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/peft/__init__.py", line 22, in <module>
+    from .auto import (
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/peft/auto.py", line 31, in <module>
+    from .mapping import MODEL_TYPE_TO_PEFT_MODEL_MAPPING
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/peft/mapping.py", line 23, in <module>
+    from .peft_model import (
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/peft/peft_model.py", line 38, in <module>
+    from .tuners import (
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/peft/tuners/__init__.py", line 21, in <module>
+    from .lora import LoraConfig, LoraModel
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/peft/tuners/lora/__init__.py", line 21, in <module>
+    from .model import LoraModel
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/peft/tuners/lora/model.py", line 45, in <module>
+    import bitsandbytes as bnb
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/__init__.py", line 6, in <module>
+    from . import cuda_setup, utils, research
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/research/__init__.py", line 1, in <module>
+    from . import nn
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/research/nn/__init__.py", line 1, in <module>
+    from .modules import LinearFP8Mixed, LinearFP8Global
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/research/nn/modules.py", line 8, in <module>
+    from bitsandbytes.optim import GlobalOptimManager
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/optim/__init__.py", line 6, in <module>
+    from bitsandbytes.cextension import COMPILED_WITH_CUDA
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/cextension.py", line 13, in <module>
+    setup.run_cuda_setup()
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/cuda_setup/main.py", line 120, in run_cuda_setup
+    binary_name, cudart_path, cc, cuda_version_string = evaluate_cuda_setup()
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/cuda_setup/main.py", line 337, in evaluate_cuda_setup
+    cudart_path = determine_cuda_runtime_lib_path()
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/cuda_setup/main.py", line 295, in determine_cuda_runtime_lib_path
+    cuda_runtime_libs.update(find_cuda_lib_in(value))
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/cuda_setup/main.py", line 231, in find_cuda_lib_in
+    return get_cuda_runtime_lib_paths(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/cuda_setup/main.py", line 217, in get_cuda_runtime_lib_paths
+    if (path / libname).is_file():
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/pathlib.py", line 1456, in is_file
+    return S_ISREG(self.stat().st_mode)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/pathlib.py", line 1232, in stat
+    return self._accessor.stat(self)
+PermissionError: [Errno 13] Permission denied: '/etc/xcat/libcudart.so'

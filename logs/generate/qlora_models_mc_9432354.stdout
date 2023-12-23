@@ -1,0 +1,2 @@
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/libbitsandbytes_cpu.so: undefined symbol: cadam32bit_grad_fp32
+Found a previous checkpoint at: /cbica/home/xjia/qlora/output/samantha111-7b-gpt-1022/checkpoint-1850

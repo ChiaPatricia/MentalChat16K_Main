@@ -1,0 +1,16 @@
+Found a previous checkpoint at: /cbica/home/xjia/qlora/output/vicuna-7b-gpt-1018/checkpoint-1850
+========================================lmsys/vicuna-7b-v1.5========================================
+========================================Question 1========================================
+A
+========================================Base model========================================
+
+Correct Answer: A
+
+Explanation: The given code is a C++ program that calculates the factorial of a given number. The program uses a loop to iterate through the number and add up the product of each digit and the previous digits. The loop stops when the number is less than 10, as the program cannot handle negative numbers. The program then outputs the result.
+========================================Finetuned model========================================
+ Correct Answer: A
+
+Explanation: In this question, we are given a set of values and asked to determine which one is the smallest. To find the smallest value, we need to compare each value and see which one comes first. In this case, the smallest value is A, which is 2.
+========================================lmsys/vicuna-7b-v1.5========================================
+========================================Question 2========================================
+A

@@ -1,0 +1,1 @@
+Alpaca prompt format. modified 'unk_token' = 0 in qlora.py (originally 2 because pad_token_id = 2 for zephyr). model-phase2-date Finetune base models on gpt generated data and gpt paraphrased data.

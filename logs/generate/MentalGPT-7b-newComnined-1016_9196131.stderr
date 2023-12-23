@@ -1,0 +1,19 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:45<?, ?it/s]
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/vicuna_generate.py", line 45, in <module>
+    base_model = AutoModelForCausalLM.from_pretrained(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/models/auto/auto_factory.py", line 565, in from_pretrained
+    return model_class.from_pretrained(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/modeling_utils.py", line 3309, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/modeling_utils.py", line 3699, in _load_pretrained_model
+    new_error_msgs, offload_index, state_dict_index = _load_state_dict_into_meta_model(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/modeling_utils.py", line 751, in _load_state_dict_into_meta_model
+    set_module_quantized_tensor_to_device(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/integrations/bitsandbytes.py", line 98, in set_module_quantized_tensor_to_device
+    new_value = bnb.nn.Params4bit(new_value, requires_grad=False, **kwargs).to(device)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/nn/modules.py", line 179, in to
+    return self.cuda(device)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/nn/modules.py", line 156, in cuda
+    w = self.data.contiguous().half().cuda(device)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 86.00 MiB (GPU 0; 11.91 GiB total capacity; 2.33 GiB already allocated; 8.85 GiB free; 2.49 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

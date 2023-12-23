@@ -1,0 +1,4 @@
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:29<00:29, 29.89s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:40<00:00, 18.67s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:40<00:00, 20.36s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:19<00:19, 19.82s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:29<00:00, 13.87s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:29<00:00, 14.77s/it]

@@ -1,0 +1,4 @@
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/qlora_models_mc_generate.py", line 94
+    "\"[[A]]\" if choice A is the most correct, \"[[B]]\" if choice B is the most correct. \"[[C]]\" if choice C is the most correct. and \"[[D]]\" if choice D is the most correct.
+                                                                                                                                                                                    ^
+SyntaxError: EOL while scanning string literal

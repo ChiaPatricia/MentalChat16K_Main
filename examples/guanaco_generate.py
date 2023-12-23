@@ -21,15 +21,17 @@ def get_last_checkpoint(checkpoint_dir):
 
 
 # TODO: Update variables
-max_new_tokens = 64
+max_new_tokens = 512
 top_p = 0.9
 temperature=0.7
-user_question = "What is Einstein's theory of relativity?"
+user_question = "What are some symptons of depression?"
 
 # Base model
 model_name_or_path = 'huggyllama/llama-7b'
 # Adapter name on HF hub or local checkpoint path.
-# adapter_path, _ = get_last_checkpoint('qlora/output/guanaco-7b')
+# import pdb; pdb.set_trace()
+# adapter_path_replicate, _ = get_last_checkpoint('output/guanaco-7b-A40')
+adapter_path_replicate = "output/guanaco-7b-A40/checkpoint-1875/adapter_model"
 adapter_path = 'timdettmers/guanaco-7b'
 
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
@@ -51,7 +53,24 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 model = PeftModel.from_pretrained(model, adapter_path)
+
+model_replicate = AutoModelForCausalLM.from_pretrained(
+    model_name_or_path,
+    torch_dtype=torch.bfloat16,
+    device_map={"": 0},
+    load_in_4bit=True,
+    quantization_config=BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type='nf4',
+    )
+)
+
+model_replicate = PeftModel.from_pretrained(model_replicate, adapter_path_replicate)
+
 model.eval()
+model_replicate.eval()
 
 prompt = (
     "A chat between a curious human and an artificial intelligence assistant. "
@@ -77,5 +96,9 @@ def generate(model, user_question, max_new_tokens=max_new_tokens, top_p=top_p, t
     print(text)
     return text
 
-generate(model, user_question)
+print("="*40+"Paper model"+"="*40)
+response = generate(model, user_question)
+print("\n")
+print("="*40+"Replicate model"+"="*40)
+response_replicate = generate(model_replicate, user_question)
 import pdb; pdb.set_trace()

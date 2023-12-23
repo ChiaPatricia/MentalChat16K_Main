@@ -1,0 +1,6 @@
+Model,Accuracy
+samantha111-7b-gpt-1022,0.6
+Samantha-1.11-7b,0.36
+vicuna-7b-gpt-1018,0.6
+vicuna-7b-v1.5,0.56
+ChatPsychiatrist,0.32

@@ -1,0 +1,3 @@
+> /gpfs/fs001/cbica/home/xjia/qlora/examples/zephyr_generate.py(64)<module>()
+-> model = AutoModelForCausalLM.from_pretrained(
+(Pdb) 

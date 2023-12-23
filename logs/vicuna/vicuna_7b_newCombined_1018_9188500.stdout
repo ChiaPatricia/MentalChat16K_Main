@@ -1,0 +1,190 @@
+Changed dataset format. MentalGPT-7b-newCombined-1018
+Namespace(model_name_or_path='lmsys/vicuna-7b-v1.5', trust_remote_code=False, use_auth_token=False, eval_dataset_size=1024, max_train_samples=None, max_eval_samples=1000, source_max_len=256, target_max_len=512, dataset='/cbica/home/xjia/qlora/data/lab/new_combined_qa_pairs_instruction.csv', dataset_format='alpaca', output_dir='./output/MentalGPT-7b-newCombined-1018', overwrite_output_dir=False, do_train=True, do_eval=True, do_predict=False, evaluation_strategy=<IntervalStrategy.STEPS: 'steps'>, prediction_loss_only=False, per_device_train_batch_size=1, per_device_eval_batch_size=1, per_gpu_train_batch_size=None, per_gpu_eval_batch_size=None, gradient_accumulation_steps=16, eval_accumulation_steps=None, eval_delay=0, learning_rate=0.0002, weight_decay=0.0, adam_beta1=0.9, adam_beta2=0.999, adam_epsilon=1e-08, max_grad_norm=0.3, num_train_epochs=3.0, max_steps=1400, lr_scheduler_type=<SchedulerType.CONSTANT: 'constant'>, warmup_ratio=0.03, warmup_steps=0, log_level='passive', log_level_replica='warning', log_on_each_node=True, logging_dir='./output/MentalGPT-7b-newCombined-1018/runs/Oct24_21-53-56_2119ga001', logging_strategy=<IntervalStrategy.STEPS: 'steps'>, logging_first_step=False, logging_steps=10, logging_nan_inf_filter=True, save_strategy=<IntervalStrategy.STEPS: 'steps'>, save_steps=450, save_total_limit=40, save_safetensors=False, save_on_each_node=False, no_cuda=False, use_cpu=False, use_mps_device=False, seed=0, data_seed=42, jit_mode_eval=False, use_ipex=False, bf16=True, fp16=False, fp16_opt_level='O1', half_precision_backend='auto', bf16_full_eval=False, fp16_full_eval=False, tf32=None, local_rank=0, ddp_backend=None, tpu_num_cores=None, tpu_metrics_debug=False, debug=[], dataloader_drop_last=False, eval_steps=187, dataloader_num_workers=3, past_index=-1, run_name='./output/MentalGPT-7b-newCombined-1018', disable_tqdm=False, remove_unused_columns=False, label_names=None, load_best_model_at_end=False, metric_for_best_model=None, greater_is_better=None, ignore_data_skip=False, fsdp=[], fsdp_min_num_params=0, fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False}, fsdp_transformer_layer_cls_to_wrap=None, deepspeed=None, label_smoothing_factor=0.0, optim=<OptimizerNames.PAGED_ADAMW: 'paged_adamw_32bit'>, optim_args=None, adafactor=False, group_by_length=True, length_column_name='length', report_to=[], ddp_find_unused_parameters=None, ddp_bucket_cap_mb=None, ddp_broadcast_buffers=None, dataloader_pin_memory=True, skip_memory_metrics=True, use_legacy_prediction_loop=False, push_to_hub=False, resume_from_checkpoint=None, hub_model_id=None, hub_strategy=<HubStrategy.EVERY_SAVE: 'every_save'>, hub_token=None, hub_private_repo=False, hub_always_push=False, gradient_checkpointing=True, include_inputs_for_metrics=False, fp16_backend='auto', push_to_hub_model_id=None, push_to_hub_organization=None, push_to_hub_token=None, mp_parameters='', auto_find_batch_size=False, full_determinism=False, torchdynamo=None, ray_scope='last', ddp_timeout=1800, torch_compile=False, torch_compile_backend=None, torch_compile_mode=None, dispatch_batches=None, include_tokens_per_second=False, sortish_sampler=False, predict_with_generate=False, generation_max_length=None, generation_num_beams=None, generation_config=GenerationConfig {
+  "max_new_tokens": 256
+}
+, cache_dir=None, train_on_source=False, mmlu_split='eval', mmlu_dataset='mmlu-fs', do_mmlu_eval=True, max_mmlu_samples=None, mmlu_source_max_len=2048, full_finetune=False, adam8bit=False, double_quant=True, quant_type='nf4', bits=4, lora_r=64, lora_alpha=16.0, lora_dropout=0.1, max_memory_MB=80000, distributed_state=Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+, _n_gpu=1, __cached__setup_devices=device(type='cuda', index=0), deepspeed_plugin=None)
+loading base model lmsys/vicuna-7b-v1.5...
+Adding special tokens.
+adding LoRA modules...
+loaded model
+Splitting train dataset in train and validation according to `eval_dataset_size`
+trainable params: 79953920.0 || all params: 3660320768 || trainable: 2.184341894267557
+torch.bfloat16 422051840 0.11530460491051696
+torch.uint8 3238002688 0.8846226582948481
+torch.float32 266240 7.273679463493403e-05
+{'loss': 2.1644, 'learning_rate': 0.0002, 'epoch': 0.03}
+{'loss': 2.011, 'learning_rate': 0.0002, 'epoch': 0.06}
+{'loss': 1.9669, 'learning_rate': 0.0002, 'epoch': 0.08}
+{'loss': 2.0432, 'learning_rate': 0.0002, 'epoch': 0.11}
+{'loss': 1.6706, 'learning_rate': 0.0002, 'epoch': 0.14}
+{'loss': 2.0249, 'learning_rate': 0.0002, 'epoch': 0.17}
+{'loss': 1.9409, 'learning_rate': 0.0002, 'epoch': 0.2}
+{'loss': 1.978, 'learning_rate': 0.0002, 'epoch': 0.23}
+{'loss': 2.0392, 'learning_rate': 0.0002, 'epoch': 0.25}
+{'loss': 1.3447, 'learning_rate': 0.0002, 'epoch': 0.28}
+{'loss': 1.9523, 'learning_rate': 0.0002, 'epoch': 0.31}
+{'loss': 1.9198, 'learning_rate': 0.0002, 'epoch': 0.34}
+{'loss': 1.9044, 'learning_rate': 0.0002, 'epoch': 0.37}
+{'loss': 2.0224, 'learning_rate': 0.0002, 'epoch': 0.39}
+{'loss': 1.4569, 'learning_rate': 0.0002, 'epoch': 0.42}
+{'loss': 1.9321, 'learning_rate': 0.0002, 'epoch': 0.45}
+{'loss': 1.9078, 'learning_rate': 0.0002, 'epoch': 0.48}
+{'loss': 1.9077, 'learning_rate': 0.0002, 'epoch': 0.51}
+{'eval_loss': 1.8428701162338257, 'eval_runtime': 178.9977, 'eval_samples_per_second': 5.587, 'eval_steps_per_second': 5.587, 'epoch': 0.53}
+{'mmlu_loss': 0.9400539390017674, 'mmlu_eval_accuracy_econometrics': 0.16666666666666666, 'mmlu_eval_accuracy_high_school_geography': 0.7727272727272727, 'mmlu_eval_accuracy_college_physics': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_us_history': 0.5909090909090909, 'mmlu_eval_accuracy_medical_genetics': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_chemistry': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_statistics': 0.391304347826087, 'mmlu_eval_accuracy_clinical_knowledge': 0.3793103448275862, 'mmlu_eval_accuracy_college_chemistry': 0.25, 'mmlu_eval_accuracy_sociology': 0.7727272727272727, 'mmlu_eval_accuracy_high_school_physics': 0.23529411764705882, 'mmlu_eval_accuracy_high_school_microeconomics': 0.38461538461538464, 'mmlu_eval_accuracy_international_law': 0.8461538461538461, 'mmlu_eval_accuracy_jurisprudence': 0.36363636363636365, 'mmlu_eval_accuracy_virology': 0.5, 'mmlu_eval_accuracy_conceptual_physics': 0.46153846153846156, 'mmlu_eval_accuracy_miscellaneous': 0.6162790697674418, 'mmlu_eval_accuracy_machine_learning': 0.09090909090909091, 'mmlu_eval_accuracy_college_medicine': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_psychology': 0.75, 'mmlu_eval_accuracy_moral_disputes': 0.42105263157894735, 'mmlu_eval_accuracy_security_studies': 0.5925925925925926, 'mmlu_eval_accuracy_professional_law': 0.37058823529411766, 'mmlu_eval_accuracy_astronomy': 0.375, 'mmlu_eval_accuracy_high_school_government_and_politics': 0.5714285714285714, 'mmlu_eval_accuracy_logical_fallacies': 0.6666666666666666, 'mmlu_eval_accuracy_high_school_computer_science': 0.6666666666666666, 'mmlu_eval_accuracy_nutrition': 0.696969696969697, 'mmlu_eval_accuracy_professional_psychology': 0.5362318840579711, 'mmlu_eval_accuracy_marketing': 0.84, 'mmlu_eval_accuracy_electrical_engineering': 0.375, 'mmlu_eval_accuracy_high_school_european_history': 0.6666666666666666, 'mmlu_eval_accuracy_management': 0.7272727272727273, 'mmlu_eval_accuracy_us_foreign_policy': 0.5454545454545454, 'mmlu_eval_accuracy_high_school_biology': 0.4375, 'mmlu_eval_accuracy_professional_medicine': 0.41935483870967744, 'mmlu_eval_accuracy_abstract_algebra': 0.2727272727272727, 'mmlu_eval_accuracy_college_computer_science': 0.45454545454545453, 'mmlu_eval_accuracy_human_sexuality': 0.5, 'mmlu_eval_accuracy_high_school_world_history': 0.6153846153846154, 'mmlu_eval_accuracy_human_aging': 0.4782608695652174, 'mmlu_eval_accuracy_college_biology': 0.4375, 'mmlu_eval_accuracy_moral_scenarios': 0.23, 'mmlu_eval_accuracy_business_ethics': 0.6363636363636364, 'mmlu_eval_accuracy_computer_security': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_mathematics': 0.3448275862068966, 'mmlu_eval_accuracy_professional_accounting': 0.3225806451612903, 'mmlu_eval_accuracy_elementary_mathematics': 0.3902439024390244, 'mmlu_eval_accuracy_college_mathematics': 0.45454545454545453, 'mmlu_eval_accuracy_formal_logic': 0.14285714285714285, 'mmlu_eval_accuracy_philosophy': 0.6176470588235294, 'mmlu_eval_accuracy_prehistory': 0.4857142857142857, 'mmlu_eval_accuracy_world_religions': 0.7368421052631579, 'mmlu_eval_accuracy_public_relations': 0.5833333333333334, 'mmlu_eval_accuracy_global_facts': 0.3, 'mmlu_eval_accuracy_high_school_macroeconomics': 0.4418604651162791, 'mmlu_eval_accuracy_anatomy': 0.5, 'mmlu_eval_accuracy': 0.4859382132295497, 'epoch': 0.53}
+{'loss': 2.0189, 'learning_rate': 0.0002, 'epoch': 0.54}
+{'loss': 1.3974, 'learning_rate': 0.0002, 'epoch': 0.56}
+{'loss': 1.9086, 'learning_rate': 0.0002, 'epoch': 0.59}
+{'loss': 1.8676, 'learning_rate': 0.0002, 'epoch': 0.62}
+{'loss': 1.9066, 'learning_rate': 0.0002, 'epoch': 0.65}
+{'loss': 1.9638, 'learning_rate': 0.0002, 'epoch': 0.68}
+{'loss': 1.3605, 'learning_rate': 0.0002, 'epoch': 0.7}
+{'loss': 1.8945, 'learning_rate': 0.0002, 'epoch': 0.73}
+{'loss': 1.8741, 'learning_rate': 0.0002, 'epoch': 0.76}
+{'loss': 1.8789, 'learning_rate': 0.0002, 'epoch': 0.79}
+{'loss': 1.9922, 'learning_rate': 0.0002, 'epoch': 0.82}
+{'loss': 1.334, 'learning_rate': 0.0002, 'epoch': 0.84}
+{'loss': 1.8805, 'learning_rate': 0.0002, 'epoch': 0.87}
+{'loss': 1.8547, 'learning_rate': 0.0002, 'epoch': 0.9}
+{'loss': 1.881, 'learning_rate': 0.0002, 'epoch': 0.93}
+{'loss': 1.9406, 'learning_rate': 0.0002, 'epoch': 0.96}
+{'loss': 1.4001, 'learning_rate': 0.0002, 'epoch': 0.99}
+{'loss': 1.8417, 'learning_rate': 0.0002, 'epoch': 1.01}
+{'loss': 1.8123, 'learning_rate': 0.0002, 'epoch': 1.04}
+{'eval_loss': 1.7994675636291504, 'eval_runtime': 182.2595, 'eval_samples_per_second': 5.487, 'eval_steps_per_second': 5.487, 'epoch': 1.05}
+{'mmlu_loss': 0.8257813177793576, 'mmlu_eval_accuracy_econometrics': 0.16666666666666666, 'mmlu_eval_accuracy_high_school_geography': 0.7272727272727273, 'mmlu_eval_accuracy_college_physics': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_us_history': 0.6363636363636364, 'mmlu_eval_accuracy_medical_genetics': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_chemistry': 0.4090909090909091, 'mmlu_eval_accuracy_high_school_statistics': 0.43478260869565216, 'mmlu_eval_accuracy_clinical_knowledge': 0.3793103448275862, 'mmlu_eval_accuracy_college_chemistry': 0.25, 'mmlu_eval_accuracy_sociology': 0.7727272727272727, 'mmlu_eval_accuracy_high_school_physics': 0.17647058823529413, 'mmlu_eval_accuracy_high_school_microeconomics': 0.38461538461538464, 'mmlu_eval_accuracy_international_law': 0.8461538461538461, 'mmlu_eval_accuracy_jurisprudence': 0.36363636363636365, 'mmlu_eval_accuracy_virology': 0.5, 'mmlu_eval_accuracy_conceptual_physics': 0.5, 'mmlu_eval_accuracy_miscellaneous': 0.5930232558139535, 'mmlu_eval_accuracy_machine_learning': 0.09090909090909091, 'mmlu_eval_accuracy_college_medicine': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_psychology': 0.7833333333333333, 'mmlu_eval_accuracy_moral_disputes': 0.39473684210526316, 'mmlu_eval_accuracy_security_studies': 0.5555555555555556, 'mmlu_eval_accuracy_professional_law': 0.35294117647058826, 'mmlu_eval_accuracy_astronomy': 0.375, 'mmlu_eval_accuracy_high_school_government_and_politics': 0.47619047619047616, 'mmlu_eval_accuracy_logical_fallacies': 0.7777777777777778, 'mmlu_eval_accuracy_high_school_computer_science': 0.6666666666666666, 'mmlu_eval_accuracy_nutrition': 0.6666666666666666, 'mmlu_eval_accuracy_professional_psychology': 0.5362318840579711, 'mmlu_eval_accuracy_marketing': 0.84, 'mmlu_eval_accuracy_electrical_engineering': 0.375, 'mmlu_eval_accuracy_high_school_european_history': 0.6666666666666666, 'mmlu_eval_accuracy_management': 0.7272727272727273, 'mmlu_eval_accuracy_us_foreign_policy': 0.6363636363636364, 'mmlu_eval_accuracy_high_school_biology': 0.4375, 'mmlu_eval_accuracy_professional_medicine': 0.45161290322580644, 'mmlu_eval_accuracy_abstract_algebra': 0.2727272727272727, 'mmlu_eval_accuracy_college_computer_science': 0.45454545454545453, 'mmlu_eval_accuracy_human_sexuality': 0.5833333333333334, 'mmlu_eval_accuracy_high_school_world_history': 0.5769230769230769, 'mmlu_eval_accuracy_human_aging': 0.5652173913043478, 'mmlu_eval_accuracy_college_biology': 0.4375, 'mmlu_eval_accuracy_moral_scenarios': 0.21, 'mmlu_eval_accuracy_business_ethics': 0.6363636363636364, 'mmlu_eval_accuracy_computer_security': 0.2727272727272727, 'mmlu_eval_accuracy_high_school_mathematics': 0.41379310344827586, 'mmlu_eval_accuracy_professional_accounting': 0.3225806451612903, 'mmlu_eval_accuracy_elementary_mathematics': 0.34146341463414637, 'mmlu_eval_accuracy_college_mathematics': 0.36363636363636365, 'mmlu_eval_accuracy_formal_logic': 0.2857142857142857, 'mmlu_eval_accuracy_philosophy': 0.6176470588235294, 'mmlu_eval_accuracy_prehistory': 0.4857142857142857, 'mmlu_eval_accuracy_world_religions': 0.7368421052631579, 'mmlu_eval_accuracy_public_relations': 0.5, 'mmlu_eval_accuracy_global_facts': 0.2, 'mmlu_eval_accuracy_high_school_macroeconomics': 0.46511627906976744, 'mmlu_eval_accuracy_anatomy': 0.5, 'mmlu_eval_accuracy': 0.4866287461790449, 'epoch': 1.05}
+{'loss': 1.7527, 'learning_rate': 0.0002, 'epoch': 1.07}
+{'loss': 1.8009, 'learning_rate': 0.0002, 'epoch': 1.1}
+{'loss': 1.6918, 'learning_rate': 0.0002, 'epoch': 1.13}
+{'loss': 1.3779, 'learning_rate': 0.0002, 'epoch': 1.15}
+{'loss': 1.7797, 'learning_rate': 0.0002, 'epoch': 1.18}
+{'loss': 1.7718, 'learning_rate': 0.0002, 'epoch': 1.21}
+{'loss': 1.7988, 'learning_rate': 0.0002, 'epoch': 1.24}
+{'loss': 1.6908, 'learning_rate': 0.0002, 'epoch': 1.27}
+Saving PEFT checkpoint...
+{'loss': 1.3888, 'learning_rate': 0.0002, 'epoch': 1.3}
+{'loss': 1.796, 'learning_rate': 0.0002, 'epoch': 1.32}
+{'loss': 1.7837, 'learning_rate': 0.0002, 'epoch': 1.35}
+{'loss': 1.7959, 'learning_rate': 0.0002, 'epoch': 1.38}
+{'loss': 1.7238, 'learning_rate': 0.0002, 'epoch': 1.41}
+{'loss': 1.3791, 'learning_rate': 0.0002, 'epoch': 1.44}
+{'loss': 1.7872, 'learning_rate': 0.0002, 'epoch': 1.46}
+{'loss': 1.7574, 'learning_rate': 0.0002, 'epoch': 1.49}
+{'loss': 1.8036, 'learning_rate': 0.0002, 'epoch': 1.52}
+{'loss': 1.703, 'learning_rate': 0.0002, 'epoch': 1.55}
+{'loss': 1.3983, 'learning_rate': 0.0002, 'epoch': 1.58}
+{'eval_loss': 1.801327109336853, 'eval_runtime': 178.8425, 'eval_samples_per_second': 5.592, 'eval_steps_per_second': 5.592, 'epoch': 1.58}
+{'mmlu_loss': 0.813838635153392, 'mmlu_eval_accuracy_econometrics': 0.16666666666666666, 'mmlu_eval_accuracy_high_school_geography': 0.7272727272727273, 'mmlu_eval_accuracy_college_physics': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_us_history': 0.5909090909090909, 'mmlu_eval_accuracy_medical_genetics': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_chemistry': 0.4090909090909091, 'mmlu_eval_accuracy_high_school_statistics': 0.43478260869565216, 'mmlu_eval_accuracy_clinical_knowledge': 0.3793103448275862, 'mmlu_eval_accuracy_college_chemistry': 0.25, 'mmlu_eval_accuracy_sociology': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_physics': 0.29411764705882354, 'mmlu_eval_accuracy_high_school_microeconomics': 0.38461538461538464, 'mmlu_eval_accuracy_international_law': 0.8461538461538461, 'mmlu_eval_accuracy_jurisprudence': 0.36363636363636365, 'mmlu_eval_accuracy_virology': 0.5, 'mmlu_eval_accuracy_conceptual_physics': 0.46153846153846156, 'mmlu_eval_accuracy_miscellaneous': 0.6162790697674418, 'mmlu_eval_accuracy_machine_learning': 0.09090909090909091, 'mmlu_eval_accuracy_college_medicine': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_psychology': 0.7833333333333333, 'mmlu_eval_accuracy_moral_disputes': 0.3684210526315789, 'mmlu_eval_accuracy_security_studies': 0.4444444444444444, 'mmlu_eval_accuracy_professional_law': 0.38235294117647056, 'mmlu_eval_accuracy_astronomy': 0.4375, 'mmlu_eval_accuracy_high_school_government_and_politics': 0.5238095238095238, 'mmlu_eval_accuracy_logical_fallacies': 0.6666666666666666, 'mmlu_eval_accuracy_high_school_computer_science': 0.6666666666666666, 'mmlu_eval_accuracy_nutrition': 0.6666666666666666, 'mmlu_eval_accuracy_professional_psychology': 0.5362318840579711, 'mmlu_eval_accuracy_marketing': 0.88, 'mmlu_eval_accuracy_electrical_engineering': 0.4375, 'mmlu_eval_accuracy_high_school_european_history': 0.6666666666666666, 'mmlu_eval_accuracy_management': 0.7272727272727273, 'mmlu_eval_accuracy_us_foreign_policy': 0.5454545454545454, 'mmlu_eval_accuracy_high_school_biology': 0.40625, 'mmlu_eval_accuracy_professional_medicine': 0.4838709677419355, 'mmlu_eval_accuracy_abstract_algebra': 0.2727272727272727, 'mmlu_eval_accuracy_college_computer_science': 0.45454545454545453, 'mmlu_eval_accuracy_human_sexuality': 0.5833333333333334, 'mmlu_eval_accuracy_high_school_world_history': 0.6153846153846154, 'mmlu_eval_accuracy_human_aging': 0.6086956521739131, 'mmlu_eval_accuracy_college_biology': 0.4375, 'mmlu_eval_accuracy_moral_scenarios': 0.22, 'mmlu_eval_accuracy_business_ethics': 0.6363636363636364, 'mmlu_eval_accuracy_computer_security': 0.2727272727272727, 'mmlu_eval_accuracy_high_school_mathematics': 0.3448275862068966, 'mmlu_eval_accuracy_professional_accounting': 0.2903225806451613, 'mmlu_eval_accuracy_elementary_mathematics': 0.36585365853658536, 'mmlu_eval_accuracy_college_mathematics': 0.45454545454545453, 'mmlu_eval_accuracy_formal_logic': 0.21428571428571427, 'mmlu_eval_accuracy_philosophy': 0.4411764705882353, 'mmlu_eval_accuracy_prehistory': 0.4857142857142857, 'mmlu_eval_accuracy_world_religions': 0.7368421052631579, 'mmlu_eval_accuracy_public_relations': 0.5, 'mmlu_eval_accuracy_global_facts': 0.2, 'mmlu_eval_accuracy_high_school_macroeconomics': 0.4418604651162791, 'mmlu_eval_accuracy_anatomy': 0.5, 'mmlu_eval_accuracy': 0.4838374073600855, 'epoch': 1.58}
+{'loss': 1.7619, 'learning_rate': 0.0002, 'epoch': 1.61}
+{'loss': 1.7272, 'learning_rate': 0.0002, 'epoch': 1.63}
+{'loss': 1.7784, 'learning_rate': 0.0002, 'epoch': 1.66}
+{'loss': 1.68, 'learning_rate': 0.0002, 'epoch': 1.69}
+{'loss': 1.3339, 'learning_rate': 0.0002, 'epoch': 1.72}
+{'loss': 1.7643, 'learning_rate': 0.0002, 'epoch': 1.75}
+{'loss': 1.7511, 'learning_rate': 0.0002, 'epoch': 1.77}
+{'loss': 1.8284, 'learning_rate': 0.0002, 'epoch': 1.8}
+{'loss': 1.599, 'learning_rate': 0.0002, 'epoch': 1.83}
+{'loss': 1.3768, 'learning_rate': 0.0002, 'epoch': 1.86}
+{'loss': 1.7666, 'learning_rate': 0.0002, 'epoch': 1.89}
+{'loss': 1.7636, 'learning_rate': 0.0002, 'epoch': 1.91}
+{'loss': 1.7694, 'learning_rate': 0.0002, 'epoch': 1.94}
+{'loss': 1.6723, 'learning_rate': 0.0002, 'epoch': 1.97}
+{'loss': 1.2876, 'learning_rate': 0.0002, 'epoch': 2.0}
+{'loss': 1.6542, 'learning_rate': 0.0002, 'epoch': 2.03}
+{'loss': 1.6213, 'learning_rate': 0.0002, 'epoch': 2.06}
+{'loss': 1.6217, 'learning_rate': 0.0002, 'epoch': 2.08}
+{'eval_loss': 1.8234167098999023, 'eval_runtime': 178.7939, 'eval_samples_per_second': 5.593, 'eval_steps_per_second': 5.593, 'epoch': 2.11}
+{'mmlu_loss': 0.854881755704733, 'mmlu_eval_accuracy_econometrics': 0.16666666666666666, 'mmlu_eval_accuracy_high_school_geography': 0.7272727272727273, 'mmlu_eval_accuracy_college_physics': 0.45454545454545453, 'mmlu_eval_accuracy_high_school_us_history': 0.5909090909090909, 'mmlu_eval_accuracy_medical_genetics': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_chemistry': 0.4090909090909091, 'mmlu_eval_accuracy_high_school_statistics': 0.5217391304347826, 'mmlu_eval_accuracy_clinical_knowledge': 0.3793103448275862, 'mmlu_eval_accuracy_college_chemistry': 0.25, 'mmlu_eval_accuracy_sociology': 0.8636363636363636, 'mmlu_eval_accuracy_high_school_physics': 0.29411764705882354, 'mmlu_eval_accuracy_high_school_microeconomics': 0.4230769230769231, 'mmlu_eval_accuracy_international_law': 0.7692307692307693, 'mmlu_eval_accuracy_jurisprudence': 0.36363636363636365, 'mmlu_eval_accuracy_virology': 0.5, 'mmlu_eval_accuracy_conceptual_physics': 0.38461538461538464, 'mmlu_eval_accuracy_miscellaneous': 0.5813953488372093, 'mmlu_eval_accuracy_machine_learning': 0.0, 'mmlu_eval_accuracy_college_medicine': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_psychology': 0.7833333333333333, 'mmlu_eval_accuracy_moral_disputes': 0.3684210526315789, 'mmlu_eval_accuracy_security_studies': 0.4444444444444444, 'mmlu_eval_accuracy_professional_law': 0.37058823529411766, 'mmlu_eval_accuracy_astronomy': 0.375, 'mmlu_eval_accuracy_high_school_government_and_politics': 0.5714285714285714, 'mmlu_eval_accuracy_logical_fallacies': 0.7222222222222222, 'mmlu_eval_accuracy_high_school_computer_science': 0.6666666666666666, 'mmlu_eval_accuracy_nutrition': 0.7272727272727273, 'mmlu_eval_accuracy_professional_psychology': 0.5507246376811594, 'mmlu_eval_accuracy_marketing': 0.88, 'mmlu_eval_accuracy_electrical_engineering': 0.4375, 'mmlu_eval_accuracy_high_school_european_history': 0.6666666666666666, 'mmlu_eval_accuracy_management': 0.7272727272727273, 'mmlu_eval_accuracy_us_foreign_policy': 0.6363636363636364, 'mmlu_eval_accuracy_high_school_biology': 0.40625, 'mmlu_eval_accuracy_professional_medicine': 0.4838709677419355, 'mmlu_eval_accuracy_abstract_algebra': 0.18181818181818182, 'mmlu_eval_accuracy_college_computer_science': 0.36363636363636365, 'mmlu_eval_accuracy_human_sexuality': 0.5833333333333334, 'mmlu_eval_accuracy_high_school_world_history': 0.6538461538461539, 'mmlu_eval_accuracy_human_aging': 0.5217391304347826, 'mmlu_eval_accuracy_college_biology': 0.5, 'mmlu_eval_accuracy_moral_scenarios': 0.25, 'mmlu_eval_accuracy_business_ethics': 0.5454545454545454, 'mmlu_eval_accuracy_computer_security': 0.2727272727272727, 'mmlu_eval_accuracy_high_school_mathematics': 0.3448275862068966, 'mmlu_eval_accuracy_professional_accounting': 0.22580645161290322, 'mmlu_eval_accuracy_elementary_mathematics': 0.34146341463414637, 'mmlu_eval_accuracy_college_mathematics': 0.45454545454545453, 'mmlu_eval_accuracy_formal_logic': 0.2857142857142857, 'mmlu_eval_accuracy_philosophy': 0.5, 'mmlu_eval_accuracy_prehistory': 0.4857142857142857, 'mmlu_eval_accuracy_world_religions': 0.7368421052631579, 'mmlu_eval_accuracy_public_relations': 0.4166666666666667, 'mmlu_eval_accuracy_global_facts': 0.2, 'mmlu_eval_accuracy_high_school_macroeconomics': 0.4418604651162791, 'mmlu_eval_accuracy_anatomy': 0.5, 'mmlu_eval_accuracy': 0.48219443669125844, 'epoch': 2.11}
+{'loss': 1.6007, 'learning_rate': 0.0002, 'epoch': 2.11}
+{'loss': 0.8965, 'learning_rate': 0.0002, 'epoch': 2.14}
+{'loss': 1.7189, 'learning_rate': 0.0002, 'epoch': 2.17}
+{'loss': 1.6743, 'learning_rate': 0.0002, 'epoch': 2.2}
+{'loss': 1.6084, 'learning_rate': 0.0002, 'epoch': 2.22}
+{'loss': 1.6447, 'learning_rate': 0.0002, 'epoch': 2.25}
+{'loss': 0.9429, 'learning_rate': 0.0002, 'epoch': 2.28}
+{'loss': 1.7113, 'learning_rate': 0.0002, 'epoch': 2.31}
+{'loss': 1.6371, 'learning_rate': 0.0002, 'epoch': 2.34}
+{'loss': 1.6299, 'learning_rate': 0.0002, 'epoch': 2.37}
+{'loss': 1.6421, 'learning_rate': 0.0002, 'epoch': 2.39}
+{'loss': 0.9224, 'learning_rate': 0.0002, 'epoch': 2.42}
+{'loss': 1.6645, 'learning_rate': 0.0002, 'epoch': 2.45}
+{'loss': 1.6263, 'learning_rate': 0.0002, 'epoch': 2.48}
+{'loss': 1.6253, 'learning_rate': 0.0002, 'epoch': 2.51}
+{'loss': 1.6475, 'learning_rate': 0.0002, 'epoch': 2.53}
+Saving PEFT checkpoint...
+{'loss': 0.9055, 'learning_rate': 0.0002, 'epoch': 2.56}
+{'loss': 1.665, 'learning_rate': 0.0002, 'epoch': 2.59}
+{'loss': 1.6573, 'learning_rate': 0.0002, 'epoch': 2.62}
+{'eval_loss': 1.815035104751587, 'eval_runtime': 178.9709, 'eval_samples_per_second': 5.588, 'eval_steps_per_second': 5.588, 'epoch': 2.63}
+{'mmlu_loss': 0.8773981830984802, 'mmlu_eval_accuracy_econometrics': 0.16666666666666666, 'mmlu_eval_accuracy_high_school_geography': 0.6818181818181818, 'mmlu_eval_accuracy_college_physics': 0.45454545454545453, 'mmlu_eval_accuracy_high_school_us_history': 0.5454545454545454, 'mmlu_eval_accuracy_medical_genetics': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_chemistry': 0.45454545454545453, 'mmlu_eval_accuracy_high_school_statistics': 0.4782608695652174, 'mmlu_eval_accuracy_clinical_knowledge': 0.3793103448275862, 'mmlu_eval_accuracy_college_chemistry': 0.25, 'mmlu_eval_accuracy_sociology': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_physics': 0.23529411764705882, 'mmlu_eval_accuracy_high_school_microeconomics': 0.46153846153846156, 'mmlu_eval_accuracy_international_law': 0.7692307692307693, 'mmlu_eval_accuracy_jurisprudence': 0.36363636363636365, 'mmlu_eval_accuracy_virology': 0.5, 'mmlu_eval_accuracy_conceptual_physics': 0.4230769230769231, 'mmlu_eval_accuracy_miscellaneous': 0.5930232558139535, 'mmlu_eval_accuracy_machine_learning': 0.09090909090909091, 'mmlu_eval_accuracy_college_medicine': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_psychology': 0.7333333333333333, 'mmlu_eval_accuracy_moral_disputes': 0.3684210526315789, 'mmlu_eval_accuracy_security_studies': 0.48148148148148145, 'mmlu_eval_accuracy_professional_law': 0.36470588235294116, 'mmlu_eval_accuracy_astronomy': 0.4375, 'mmlu_eval_accuracy_high_school_government_and_politics': 0.5714285714285714, 'mmlu_eval_accuracy_logical_fallacies': 0.6666666666666666, 'mmlu_eval_accuracy_high_school_computer_science': 0.6666666666666666, 'mmlu_eval_accuracy_nutrition': 0.696969696969697, 'mmlu_eval_accuracy_professional_psychology': 0.5362318840579711, 'mmlu_eval_accuracy_marketing': 0.88, 'mmlu_eval_accuracy_electrical_engineering': 0.375, 'mmlu_eval_accuracy_high_school_european_history': 0.6666666666666666, 'mmlu_eval_accuracy_management': 0.7272727272727273, 'mmlu_eval_accuracy_us_foreign_policy': 0.5454545454545454, 'mmlu_eval_accuracy_high_school_biology': 0.40625, 'mmlu_eval_accuracy_professional_medicine': 0.4838709677419355, 'mmlu_eval_accuracy_abstract_algebra': 0.18181818181818182, 'mmlu_eval_accuracy_college_computer_science': 0.36363636363636365, 'mmlu_eval_accuracy_human_sexuality': 0.5, 'mmlu_eval_accuracy_high_school_world_history': 0.6153846153846154, 'mmlu_eval_accuracy_human_aging': 0.5652173913043478, 'mmlu_eval_accuracy_college_biology': 0.5625, 'mmlu_eval_accuracy_moral_scenarios': 0.31, 'mmlu_eval_accuracy_business_ethics': 0.5454545454545454, 'mmlu_eval_accuracy_computer_security': 0.18181818181818182, 'mmlu_eval_accuracy_high_school_mathematics': 0.3103448275862069, 'mmlu_eval_accuracy_professional_accounting': 0.25806451612903225, 'mmlu_eval_accuracy_elementary_mathematics': 0.34146341463414637, 'mmlu_eval_accuracy_college_mathematics': 0.45454545454545453, 'mmlu_eval_accuracy_formal_logic': 0.21428571428571427, 'mmlu_eval_accuracy_philosophy': 0.47058823529411764, 'mmlu_eval_accuracy_prehistory': 0.4857142857142857, 'mmlu_eval_accuracy_world_religions': 0.7368421052631579, 'mmlu_eval_accuracy_public_relations': 0.5, 'mmlu_eval_accuracy_global_facts': 0.2, 'mmlu_eval_accuracy_high_school_macroeconomics': 0.46511627906976744, 'mmlu_eval_accuracy_anatomy': 0.5, 'mmlu_eval_accuracy': 0.47750920620944964, 'epoch': 2.63}
+{'loss': 1.6374, 'learning_rate': 0.0002, 'epoch': 2.65}
+{'loss': 1.669, 'learning_rate': 0.0002, 'epoch': 2.68}
+{'loss': 1.0376, 'learning_rate': 0.0002, 'epoch': 2.7}
+{'loss': 1.6679, 'learning_rate': 0.0002, 'epoch': 2.73}
+{'loss': 1.6404, 'learning_rate': 0.0002, 'epoch': 2.76}
+{'loss': 1.6372, 'learning_rate': 0.0002, 'epoch': 2.79}
+{'loss': 1.6268, 'learning_rate': 0.0002, 'epoch': 2.82}
+{'loss': 0.9142, 'learning_rate': 0.0002, 'epoch': 2.84}
+{'loss': 1.7058, 'learning_rate': 0.0002, 'epoch': 2.87}
+{'loss': 1.6462, 'learning_rate': 0.0002, 'epoch': 2.9}
+{'loss': 1.6032, 'learning_rate': 0.0002, 'epoch': 2.93}
+{'loss': 1.6497, 'learning_rate': 0.0002, 'epoch': 2.96}
+{'loss': 0.9556, 'learning_rate': 0.0002, 'epoch': 2.98}
+{'loss': 1.4928, 'learning_rate': 0.0002, 'epoch': 3.01}
+{'loss': 1.4569, 'learning_rate': 0.0002, 'epoch': 3.04}
+{'loss': 1.4418, 'learning_rate': 0.0002, 'epoch': 3.07}
+{'loss': 1.3826, 'learning_rate': 0.0002, 'epoch': 3.1}
+{'loss': 1.0506, 'learning_rate': 0.0002, 'epoch': 3.13}
+{'loss': 0.9381, 'learning_rate': 0.0002, 'epoch': 3.15}
+{'eval_loss': 1.8942787647247314, 'eval_runtime': 178.6139, 'eval_samples_per_second': 5.599, 'eval_steps_per_second': 5.599, 'epoch': 3.16}
+{'mmlu_loss': 0.8263043649312155, 'mmlu_eval_accuracy_econometrics': 0.16666666666666666, 'mmlu_eval_accuracy_high_school_geography': 0.6818181818181818, 'mmlu_eval_accuracy_college_physics': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_us_history': 0.5909090909090909, 'mmlu_eval_accuracy_medical_genetics': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_chemistry': 0.45454545454545453, 'mmlu_eval_accuracy_high_school_statistics': 0.43478260869565216, 'mmlu_eval_accuracy_clinical_knowledge': 0.41379310344827586, 'mmlu_eval_accuracy_college_chemistry': 0.25, 'mmlu_eval_accuracy_sociology': 0.8636363636363636, 'mmlu_eval_accuracy_high_school_physics': 0.23529411764705882, 'mmlu_eval_accuracy_high_school_microeconomics': 0.38461538461538464, 'mmlu_eval_accuracy_international_law': 0.8461538461538461, 'mmlu_eval_accuracy_jurisprudence': 0.36363636363636365, 'mmlu_eval_accuracy_virology': 0.5, 'mmlu_eval_accuracy_conceptual_physics': 0.38461538461538464, 'mmlu_eval_accuracy_miscellaneous': 0.5930232558139535, 'mmlu_eval_accuracy_machine_learning': 0.0, 'mmlu_eval_accuracy_college_medicine': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_psychology': 0.7833333333333333, 'mmlu_eval_accuracy_moral_disputes': 0.3684210526315789, 'mmlu_eval_accuracy_security_studies': 0.48148148148148145, 'mmlu_eval_accuracy_professional_law': 0.35294117647058826, 'mmlu_eval_accuracy_astronomy': 0.375, 'mmlu_eval_accuracy_high_school_government_and_politics': 0.5238095238095238, 'mmlu_eval_accuracy_logical_fallacies': 0.6666666666666666, 'mmlu_eval_accuracy_high_school_computer_science': 0.5555555555555556, 'mmlu_eval_accuracy_nutrition': 0.696969696969697, 'mmlu_eval_accuracy_professional_psychology': 0.4927536231884058, 'mmlu_eval_accuracy_marketing': 0.88, 'mmlu_eval_accuracy_electrical_engineering': 0.375, 'mmlu_eval_accuracy_high_school_european_history': 0.6666666666666666, 'mmlu_eval_accuracy_management': 0.7272727272727273, 'mmlu_eval_accuracy_us_foreign_policy': 0.5454545454545454, 'mmlu_eval_accuracy_high_school_biology': 0.34375, 'mmlu_eval_accuracy_professional_medicine': 0.45161290322580644, 'mmlu_eval_accuracy_abstract_algebra': 0.2727272727272727, 'mmlu_eval_accuracy_college_computer_science': 0.45454545454545453, 'mmlu_eval_accuracy_human_sexuality': 0.5833333333333334, 'mmlu_eval_accuracy_high_school_world_history': 0.6538461538461539, 'mmlu_eval_accuracy_human_aging': 0.6086956521739131, 'mmlu_eval_accuracy_college_biology': 0.5625, 'mmlu_eval_accuracy_moral_scenarios': 0.31, 'mmlu_eval_accuracy_business_ethics': 0.5454545454545454, 'mmlu_eval_accuracy_computer_security': 0.2727272727272727, 'mmlu_eval_accuracy_high_school_mathematics': 0.41379310344827586, 'mmlu_eval_accuracy_professional_accounting': 0.22580645161290322, 'mmlu_eval_accuracy_elementary_mathematics': 0.24390243902439024, 'mmlu_eval_accuracy_college_mathematics': 0.2727272727272727, 'mmlu_eval_accuracy_formal_logic': 0.21428571428571427, 'mmlu_eval_accuracy_philosophy': 0.47058823529411764, 'mmlu_eval_accuracy_prehistory': 0.4857142857142857, 'mmlu_eval_accuracy_world_religions': 0.7368421052631579, 'mmlu_eval_accuracy_public_relations': 0.5, 'mmlu_eval_accuracy_global_facts': 0.2, 'mmlu_eval_accuracy_high_school_macroeconomics': 0.46511627906976744, 'mmlu_eval_accuracy_anatomy': 0.42857142857142855, 'mmlu_eval_accuracy': 0.4722247424596852, 'epoch': 3.16}
+{'loss': 1.5129, 'learning_rate': 0.0002, 'epoch': 3.18}
+{'loss': 1.4639, 'learning_rate': 0.0002, 'epoch': 3.21}
+{'loss': 1.3655, 'learning_rate': 0.0002, 'epoch': 3.24}
+{'loss': 1.0927, 'learning_rate': 0.0002, 'epoch': 3.27}
+{'loss': 0.9614, 'learning_rate': 0.0002, 'epoch': 3.29}
+{'loss': 1.5036, 'learning_rate': 0.0002, 'epoch': 3.32}
+{'loss': 1.4326, 'learning_rate': 0.0002, 'epoch': 3.35}
+{'loss': 1.4281, 'learning_rate': 0.0002, 'epoch': 3.38}
+{'loss': 1.0649, 'learning_rate': 0.0002, 'epoch': 3.41}
+{'loss': 0.923, 'learning_rate': 0.0002, 'epoch': 3.44}
+{'loss': 1.5406, 'learning_rate': 0.0002, 'epoch': 3.46}
+{'loss': 1.4537, 'learning_rate': 0.0002, 'epoch': 3.49}
+{'loss': 1.4057, 'learning_rate': 0.0002, 'epoch': 3.52}
+{'loss': 1.128, 'learning_rate': 0.0002, 'epoch': 3.55}
+{'loss': 0.9599, 'learning_rate': 0.0002, 'epoch': 3.58}
+{'loss': 1.4822, 'learning_rate': 0.0002, 'epoch': 3.6}
+{'loss': 1.4756, 'learning_rate': 0.0002, 'epoch': 3.63}
+{'loss': 1.4253, 'learning_rate': 0.0002, 'epoch': 3.66}
+{'eval_loss': 1.9650417566299438, 'eval_runtime': 181.7127, 'eval_samples_per_second': 5.503, 'eval_steps_per_second': 5.503, 'epoch': 3.69}
+{'mmlu_loss': 0.8340933775793272, 'mmlu_eval_accuracy_econometrics': 0.16666666666666666, 'mmlu_eval_accuracy_high_school_geography': 0.7272727272727273, 'mmlu_eval_accuracy_college_physics': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_us_history': 0.5909090909090909, 'mmlu_eval_accuracy_medical_genetics': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_chemistry': 0.45454545454545453, 'mmlu_eval_accuracy_high_school_statistics': 0.43478260869565216, 'mmlu_eval_accuracy_clinical_knowledge': 0.41379310344827586, 'mmlu_eval_accuracy_college_chemistry': 0.25, 'mmlu_eval_accuracy_sociology': 0.8181818181818182, 'mmlu_eval_accuracy_high_school_physics': 0.23529411764705882, 'mmlu_eval_accuracy_high_school_microeconomics': 0.4230769230769231, 'mmlu_eval_accuracy_international_law': 0.7692307692307693, 'mmlu_eval_accuracy_jurisprudence': 0.36363636363636365, 'mmlu_eval_accuracy_virology': 0.5555555555555556, 'mmlu_eval_accuracy_conceptual_physics': 0.4230769230769231, 'mmlu_eval_accuracy_miscellaneous': 0.5930232558139535, 'mmlu_eval_accuracy_machine_learning': 0.09090909090909091, 'mmlu_eval_accuracy_college_medicine': 0.36363636363636365, 'mmlu_eval_accuracy_high_school_psychology': 0.75, 'mmlu_eval_accuracy_moral_disputes': 0.42105263157894735, 'mmlu_eval_accuracy_security_studies': 0.48148148148148145, 'mmlu_eval_accuracy_professional_law': 0.3764705882352941, 'mmlu_eval_accuracy_astronomy': 0.5, 'mmlu_eval_accuracy_high_school_government_and_politics': 0.5238095238095238, 'mmlu_eval_accuracy_logical_fallacies': 0.6666666666666666, 'mmlu_eval_accuracy_high_school_computer_science': 0.5555555555555556, 'mmlu_eval_accuracy_nutrition': 0.696969696969697, 'mmlu_eval_accuracy_professional_psychology': 0.5362318840579711, 'mmlu_eval_accuracy_marketing': 0.92, 'mmlu_eval_accuracy_electrical_engineering': 0.3125, 'mmlu_eval_accuracy_high_school_european_history': 0.6111111111111112, 'mmlu_eval_accuracy_management': 0.7272727272727273, 'mmlu_eval_accuracy_us_foreign_policy': 0.5454545454545454, 'mmlu_eval_accuracy_high_school_biology': 0.40625, 'mmlu_eval_accuracy_professional_medicine': 0.4838709677419355, 'mmlu_eval_accuracy_abstract_algebra': 0.2727272727272727, 'mmlu_eval_accuracy_college_computer_science': 0.45454545454545453, 'mmlu_eval_accuracy_human_sexuality': 0.5, 'mmlu_eval_accuracy_high_school_world_history': 0.6153846153846154, 'mmlu_eval_accuracy_human_aging': 0.6521739130434783, 'mmlu_eval_accuracy_college_biology': 0.5, 'mmlu_eval_accuracy_moral_scenarios': 0.26, 'mmlu_eval_accuracy_business_ethics': 0.5454545454545454, 'mmlu_eval_accuracy_computer_security': 0.18181818181818182, 'mmlu_eval_accuracy_high_school_mathematics': 0.3103448275862069, 'mmlu_eval_accuracy_professional_accounting': 0.2903225806451613, 'mmlu_eval_accuracy_elementary_mathematics': 0.3170731707317073, 'mmlu_eval_accuracy_college_mathematics': 0.2727272727272727, 'mmlu_eval_accuracy_formal_logic': 0.14285714285714285, 'mmlu_eval_accuracy_philosophy': 0.4411764705882353, 'mmlu_eval_accuracy_prehistory': 0.4857142857142857, 'mmlu_eval_accuracy_world_religions': 0.7368421052631579, 'mmlu_eval_accuracy_public_relations': 0.5, 'mmlu_eval_accuracy_global_facts': 0.2, 'mmlu_eval_accuracy_high_school_macroeconomics': 0.46511627906976744, 'mmlu_eval_accuracy_anatomy': 0.5, 'mmlu_eval_accuracy': 0.47393657038969844, 'epoch': 3.69}
+{'loss': 1.1085, 'learning_rate': 0.0002, 'epoch': 3.69}
+{'loss': 0.9546, 'learning_rate': 0.0002, 'epoch': 3.72}
+{'loss': 1.5542, 'learning_rate': 0.0002, 'epoch': 3.75}
+{'loss': 1.4518, 'learning_rate': 0.0002, 'epoch': 3.77}
+{'loss': 1.422, 'learning_rate': 0.0002, 'epoch': 3.8}
+Saving PEFT checkpoint...
+{'loss': 1.0981, 'learning_rate': 0.0002, 'epoch': 3.83}
+{'loss': 0.9334, 'learning_rate': 0.0002, 'epoch': 3.86}
+{'loss': 1.5159, 'learning_rate': 0.0002, 'epoch': 3.89}
+{'loss': 1.4806, 'learning_rate': 0.0002, 'epoch': 3.91}
+{'loss': 1.4264, 'learning_rate': 0.0002, 'epoch': 3.94}
+{'train_runtime': 15938.5592, 'train_samples_per_second': 1.405, 'train_steps_per_second': 0.088, 'train_loss': 1.5862383842468262, 'epoch': 3.94}
+Saving PEFT checkpoint...
+***** train metrics *****
+  epoch                    =       3.94
+  train_loss               =     1.5862
+  train_runtime            = 4:25:38.55
+  train_samples_per_second =      1.405
+  train_steps_per_second   =      0.088
+***** eval metrics *****
+  epoch                   =       3.94
+  eval_loss               =     1.8951
+  eval_runtime            = 0:02:58.15
+  eval_samples_per_second =      5.613
+  eval_steps_per_second   =      5.613

@@ -1,0 +1,23 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:29<00:29, 29.06s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:40<00:00, 18.86s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:40<00:00, 20.39s/it]
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/configuration_utils.py:381: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/configuration_utils.py:386: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:19<00:19, 19.52s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:25<00:00, 11.80s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:25<00:00, 12.96s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:17<00:17, 17.81s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:26<00:00, 12.26s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:26<00:00, 13.09s/it]
+Downloading (…)neration_config.json:   0%|          | 0.00/116 [00:00<?, ?B/s]Downloading (…)neration_config.json: 100%|██████████| 116/116 [00:00<00:00, 116kB/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.43s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.04s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.70s/it]
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/qlora_models_generate.py", line 122, in <module>
+    _, base_response = generate(base_model, instruction, question["turns"][0], prompt)
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/qlora_models_generate.py", line 32, in generate
+    outputs = model.generate(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/utils.py", line 1693, in generate
+    return self.sample(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/utils.py", line 2816, in sample
+    raise ValueError("If `eos_token_id` is defined, make sure that `pad_token_id` is defined.")
+ValueError: If `eos_token_id` is defined, make sure that `pad_token_id` is defined.

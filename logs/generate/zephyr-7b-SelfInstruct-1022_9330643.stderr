@@ -1,0 +1,12 @@
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|█▎        | 1/8 [00:09<01:06,  9.53s/it]Loading checkpoint shards:  25%|██▌       | 2/8 [00:15<00:43,  7.32s/it]Loading checkpoint shards:  38%|███▊      | 3/8 [00:22<00:37,  7.45s/it]Loading checkpoint shards:  50%|█████     | 4/8 [00:29<00:27,  7.00s/it]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:34<00:19,  6.45s/it]Loading checkpoint shards:  75%|███████▌  | 6/8 [00:40<00:12,  6.11s/it]Loading checkpoint shards:  88%|████████▊ | 7/8 [00:45<00:05,  5.89s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:47<00:00,  4.77s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:47<00:00,  5.99s/it]
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/zephyr_generate.py", line 64, in <module>
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/zephyr_generate.py", line 64, in <module>
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit

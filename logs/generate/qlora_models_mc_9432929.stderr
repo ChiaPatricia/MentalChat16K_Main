@@ -1,0 +1,11 @@
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/cextension.py:34: UserWarning: The installed version of bitsandbytes was compiled without GPU support. 8-bit optimizers, 8-bit multiplication, and GPU quantization are unavailable.
+  warn("The installed version of bitsandbytes was compiled without GPU support. "
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/qlora_models_mc_generate.py", line 115, in <module>
+    base_model = AutoModelForCausalLM.from_pretrained(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/models/auto/auto_factory.py", line 565, in from_pretrained
+    return model_class.from_pretrained(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/modeling_utils.py", line 2616, in from_pretrained
+    raise ImportError(
+ImportError: Using `load_in_8bit=True` requires Accelerate: `pip install accelerate` and the latest version of bitsandbytes `pip install -i https://test.pypi.org/simple/ bitsandbytes` or pip install bitsandbytes` 

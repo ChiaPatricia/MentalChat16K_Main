@@ -1,0 +1,25 @@
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|█▎        | 1/8 [00:12<01:27, 12.56s/it]Loading checkpoint shards:  25%|██▌       | 2/8 [00:18<00:53,  8.92s/it]Loading checkpoint shards:  38%|███▊      | 3/8 [00:24<00:36,  7.27s/it]Loading checkpoint shards:  50%|█████     | 4/8 [00:29<00:26,  6.66s/it]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:35<00:19,  6.35s/it]Loading checkpoint shards:  75%|███████▌  | 6/8 [00:41<00:12,  6.06s/it]Loading checkpoint shards:  88%|████████▊ | 7/8 [00:47<00:05,  5.98s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:49<00:00,  4.75s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:49<00:00,  6.15s/it]
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|█▎        | 1/8 [00:02<00:14,  2.05s/it]Loading checkpoint shards:  25%|██▌       | 2/8 [00:04<00:12,  2.17s/it]Loading checkpoint shards:  38%|███▊      | 3/8 [00:06<00:11,  2.23s/it]Loading checkpoint shards:  50%|█████     | 4/8 [00:08<00:08,  2.24s/it]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:11<00:06,  2.27s/it]Loading checkpoint shards:  75%|███████▌  | 6/8 [00:13<00:04,  2.27s/it]Loading checkpoint shards:  88%|████████▊ | 7/8 [00:15<00:02,  2.29s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:16<00:00,  1.83s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:16<00:00,  2.08s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:24<00:24, 24.68s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:36<00:00, 17.12s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:36<00:00, 18.25s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:12<?, ?it/s]
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/qlora_models_mc_generate.py", line 132, in <module>
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/models/auto/auto_factory.py", line 565, in from_pretrained
+    return model_class.from_pretrained(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/modeling_utils.py", line 3309, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/modeling_utils.py", line 3699, in _load_pretrained_model
+    new_error_msgs, offload_index, state_dict_index = _load_state_dict_into_meta_model(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/modeling_utils.py", line 751, in _load_state_dict_into_meta_model
+    set_module_quantized_tensor_to_device(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/integrations/bitsandbytes.py", line 98, in set_module_quantized_tensor_to_device
+    new_value = bnb.nn.Params4bit(new_value, requires_grad=False, **kwargs).to(device)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/nn/modules.py", line 179, in to
+    return self.cuda(device)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/bitsandbytes/nn/modules.py", line 156, in cuda
+    w = self.data.contiguous().half().cuda(device)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 112.00 MiB (GPU 0; 15.78 GiB total capacity; 14.58 GiB already allocated; 97.50 MiB free; 14.81 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

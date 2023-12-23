@@ -1,0 +1,18 @@
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/models/auto/auto_factory.py:472: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:31<00:31, 31.58s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:41<00:00, 19.00s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:41<00:00, 20.88s/it]
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/utils/hub.py:374: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py:655: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/qlora.py", line 841, in <module>
+    train()
+  File "/gpfs/fs001/cbica/home/xjia/qlora/qlora.py", line 704, in train
+    model, tokenizer = get_accelerate_model(args, checkpoint_dir)
+  File "/gpfs/fs001/cbica/home/xjia/qlora/qlora.py", line 371, in get_accelerate_model
+    "unk_token": tokenizer.convert_ids_to_tokens(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/tokenization_utils.py", line 964, in convert_ids_to_tokens
+    for index in ids:
+TypeError: 'NoneType' object is not iterable

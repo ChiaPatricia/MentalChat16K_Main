@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/qlora_models_mc_generate.py", line 95, in <module>
+    tokenizer = AutoTokenizer.from_pretrained(base_model_name)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 701, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 534, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/utils/hub.py", line 429, in cached_file
+    resolved_file = hf_hub_download(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 110, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 158, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.utils._validators.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'EmoCareAI/ChatPsychiatristehartford/Samantha-1.2-mistral-7b'. Use `repo_type` argument if needed.

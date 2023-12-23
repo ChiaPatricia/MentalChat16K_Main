@@ -1,0 +1,35 @@
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]
+Loading checkpoint shards:  12%|█▎        | 1/8 [00:11<01:18, 11.24s/it]
+Loading checkpoint shards:  25%|██▌       | 2/8 [00:17<00:50,  8.43s/it]
+Loading checkpoint shards:  38%|███▊      | 3/8 [00:23<00:36,  7.38s/it]
+Loading checkpoint shards:  50%|█████     | 4/8 [00:29<00:26,  6.72s/it]
+Loading checkpoint shards:  62%|██████▎   | 5/8 [00:35<00:19,  6.45s/it]
+Loading checkpoint shards:  75%|███████▌  | 6/8 [00:42<00:13,  6.51s/it]
+Loading checkpoint shards:  88%|████████▊ | 7/8 [00:48<00:06,  6.40s/it]
+Loading checkpoint shards: 100%|██████████| 8/8 [00:50<00:00,  5.12s/it]
+Loading checkpoint shards: 100%|██████████| 8/8 [00:50<00:00,  6.34s/it]
+
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]
+Loading checkpoint shards:  12%|█▎        | 1/8 [00:02<00:16,  2.29s/it]
+Loading checkpoint shards:  25%|██▌       | 2/8 [00:04<00:14,  2.43s/it]
+Loading checkpoint shards:  38%|███▊      | 3/8 [00:07<00:12,  2.51s/it]
+Loading checkpoint shards:  50%|█████     | 4/8 [00:09<00:10,  2.52s/it]
+Loading checkpoint shards:  62%|██████▎   | 5/8 [00:12<00:07,  2.55s/it]
+Loading checkpoint shards:  75%|███████▌  | 6/8 [00:15<00:05,  2.54s/it]
+Loading checkpoint shards:  88%|████████▊ | 7/8 [00:17<00:02,  2.55s/it]
+Loading checkpoint shards: 100%|██████████| 8/8 [00:18<00:00,  2.03s/it]
+Loading checkpoint shards: 100%|██████████| 8/8 [00:18<00:00,  2.32s/it]
+Traceback (most recent call last):
+  File "/gpfs/fs001/cbica/home/xjia/qlora/examples/zephyr_generate.py", line 147, in <module>
+    pt, base_response = generate(base_model, test_df['instruction'][i], test_df["input"][i], prompt)
+  File "/gpfs/fs001/cbica/ho.generateme/xjia/qlora/examples/zephyr_generate.py", line 121, in generate
+    outputs = model(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/utils.py", line 1693, in generate
+    return self.sample(
+  File "/cbica/home/xjia/.conda/envs/textlearning/lib/python3.9/site-packages/transformers/generation/utils.py", line 2816, in sample
+    raise ValueError("If `eos_token_id` is defined, make sure that `pad_token_id` is defined.")
+ValueError: If `eos_token_id` is defined, make sure that `pad_token_id` is defined.

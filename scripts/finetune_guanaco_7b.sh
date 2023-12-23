@@ -1,6 +1,15 @@
+#!/bin/bash
+main_dir=/cbica/home/xjia/qlora
+cd $main_dir
+echo "A40, guanaco-7b-A40"
+
+source /cbica/software/external/python/anaconda/3/bin/activate
+
+conda activate textlearning
+
 python qlora.py \
     --model_name_or_path huggyllama/llama-7b \
-    --output_dir ./output/guanaco-7b \
+    --output_dir ./output/guanaco-7b-A40 \
     --logging_steps 10 \
     --save_strategy steps \
     --data_seed 42 \
