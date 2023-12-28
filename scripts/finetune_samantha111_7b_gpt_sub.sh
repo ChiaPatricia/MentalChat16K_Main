@@ -14,12 +14,12 @@ conda activate textlearning
 
 jid=$(qsub \
       -terse \
-      -M "jiaxu7@upenn.edu,tywei@seas.upenn.edu" \
+      -M "jiaxu7@upenn.edu,jiaxu@alumni.upenn.edu,tywei@seas.upenn.edu" \
       -m bea \
-      -l A40 \
+      -l A100 \
       -l h_vmem=100G \
-      -o ${main_dir}/logs/samantha/samantha111_7b_SelfInstruct_1022_\$JOB_ID.stdout \
-      -e ${main_dir}/logs/samantha/samantha111_7b_SelfInstruct_1022_\$JOB_ID.stderr \
+      -o ${main_dir}/logs/phase2_finetune/samantha111_7b_phase2_1226_\$JOB_ID.stdout \
+      -e ${main_dir}/logs/phase2_finetune/samantha111_7b_phase2_1226_\$JOB_ID.stderr \
       ${main_dir}/scripts/finetune_samantha111_7b_gpt.sh \
       )
 

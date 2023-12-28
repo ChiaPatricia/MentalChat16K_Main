@@ -14,12 +14,12 @@ conda activate textlearning
 
 jid=$(qsub \
       -terse \
-      -M "jiaxu7@upenn.edu,tywei@seas.upenn.edu" \
+      -M "jiaxu7@upenn.edu,jiaxu@alumni.upenn.edutywei@seas.upenn.edu" \
       -m bea \
-      -l A40 \
+      -l A100 \
       -l h_vmem=100G \
-      -o ${main_dir}/logs/generate/qlora_models_\$JOB_ID.stdout \
-      -e ${main_dir}/logs/generate/qlora_models_\$JOB_ID.stderr \
+      -o ${main_dir}/logs/phase2_generate/all_models_\$JOB_ID.stdout \
+      -e ${main_dir}/logs/phase2_generate/all_models_\$JOB_ID.stderr \
       ${main_dir}/scripts/generate_qlora_7b.sh \
       )
 

@@ -26,19 +26,31 @@ max_new_tokens = 512
 top_p = 0.5
 temperature=0.7
 
-def generate(model, instruction, input, prompt, max_new_tokens=max_new_tokens, top_p=top_p, temperature=temperature):
+def generate(model, instruction, input, prompt, max_new_tokens=max_new_tokens, top_p=top_p, temperature=temperature, pad0=True):
     inputs = tokenizer(prompt.format(instruction=instruction, input=input), return_tensors="pt").to('cuda')
 
-    outputs = model.generate(
-        **inputs, 
-        generation_config=GenerationConfig(
-            do_sample=True,
-            max_new_tokens=max_new_tokens,
-            top_p=0.5, #originally 0.9
-            temperature=temperature,
-            pad_token_id = 0,
+    if pad0:
+        outputs = model.generate(
+            **inputs, 
+            generation_config=GenerationConfig(
+                do_sample=True,
+                max_new_tokens=max_new_tokens,
+                top_p=0.5, #originally 0.9
+                temperature=temperature,
+                pad_token_id = 0,
+            )
         )
-    )
+    else:
+        outputs = model.generate(
+            **inputs, 
+            generation_config=GenerationConfig(
+                do_sample=True,
+                max_new_tokens=max_new_tokens,
+                top_p=0.5, #originally 0.9
+                temperature=temperature,
+                pad_token_id = 2,
+            )
+        )
 
     text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     text = text.split('### Response: ')
@@ -50,12 +62,26 @@ base_model_names = ['lmsys/vicuna-7b-v1.5',
                     'ehartford/Samantha-1.2-mistral-7b', 
                     'ehartford/Samantha-1.11-7b', 
                     'HuggingFaceH4/zephyr-7b-alpha', 
+                    'lmsys/vicuna-7b-v1.5', 
+                    'ehartford/Samantha-1.2-mistral-7b',
+                    'HuggingFaceH4/zephyr-7b-alpha',
+                    'mistralai/Mixtral-8x7B-v0.1',
+                    'mistralai/Mistral-7B-Instruct-v0.2',
+                    'mistralai/Mixtral-8x7B-Instruct-v0.1',
+                    'mistralai/Mistral-7B-v0.1',
                     'EmoCareAI/ChatPsychiatrist']
 adapter_dirs = ['vicuna-7b-gpt-1018', 
-                 'samantha12-7b-gpt-1022',
-                 'samantha111-7b-gpt-1022',
-                 'zephyr-7b-gpt-1025', 
-                 '']
+                'samantha12-7b-gpt-1022',
+                'samantha111-7b-gpt-1022',
+                'zephyr-7b-gpt-1025',
+                'vicuna-7b-v1.5-phase2-1223',
+                'samantha-v1.2-mistral-7b-phase2-1223', 
+                'zephyr-7b-alpha-phase2-1223',
+                'Mixtral-8x7B-v0.1-phase2-1223',
+                'Mistral-7B-Instruct-v0.2-phase2-1223',
+                'Mixtral-8x7B-Instruct-v0.1-phase2-1223',
+                'Mistral-7B-v0.1-phase2-1223',
+                '']
 
 prompt = (
     "Below is an instruction that describes a task, paired with an input that provides further context. "
@@ -69,13 +95,18 @@ instruction = (
 )
 
 # questions = pd.read_json('/cbica/home/xjia/qlora/data/lab/newCombined_bench.jsonl', lines=True)
-questions = pd.read_json('/cbica/home/xjia/qlora/data/lab/newCombined_bench.jsonl', lines=True)
+questions = pd.read_json('/cbica/home/xjia/qlora/data/lab/evalq_bench.jsonl', lines=True)
 result_df = pd.DataFrame({})
 input_prompt = []
 base_responses = []
 responses = []
 
 for base_model_name, adapter_dir in zip(base_model_names, adapter_dirs):
+    # Specify pad token
+    pad0 = True
+    if "zephyr" in base_model_name:
+        pad0 = False
+
     adapter_path = get_last_checkpoint(join(user_dir, 'output', adapter_dir))
 
     tokenizer = AutoTokenizer.from_pretrained(base_model_name)
@@ -120,16 +151,16 @@ for base_model_name, adapter_dir in zip(base_model_names, adapter_dirs):
         # print("="*40+"Base Vicuna"+"="*40)
         print("="*40+f"Question {index+1}"+"="*40)
         print(question['turns'][0])
-        _, base_response = generate(base_model, instruction, question["turns"][0], prompt)
+        _, base_response = generate(base_model, instruction, question["turns"][0], prompt, pad0=pad0)
         print("="*40+"Base model"+"="*40)
         print(base_response)
         print("="*40+"Finetuned model"+"="*40)
-        _, response = generate(model, instruction, question["turns"][0], prompt)
+        _, response = generate(model, instruction, question["turns"][0], prompt, pad0=pad0)
         print(response)
 
         choices_base = [{"index": 0, "turns": [base_response]}]
 
-        with open(join(user_dir, f"data/eval_jsonl/newCombined_bench/{base_model_name.split('/')[1]}.jsonl"), "a") as fout:
+        with open(join(user_dir, f"data/eval_jsonl/evalq_bench/model_answer/{base_model_name.split('/')[1]}.jsonl"), "a") as fout:
             ans_json = {
                 "question_id": question["question_id"],
                 "answer_id": question["question_id"],
@@ -140,7 +171,7 @@ for base_model_name, adapter_dir in zip(base_model_names, adapter_dirs):
             fout.write(json.dumps(ans_json) + "\n")
 
         choices = [{"index": 0, "turns": [response]}]
-        with open(join(user_dir, f"data/eval_jsonl/newCombined_bench/{adapter_dir}.jsonl"), "a") as fout:
+        with open(join(user_dir, f"data/eval_jsonl/evalq_bench/model_answer/{adapter_dir}.jsonl"), "a") as fout:
             ans_json = {
                 "question_id": question["question_id"],
                 "answer_id": question["question_id"],
