@@ -54,13 +54,14 @@ def generate(model, input, prompt, max_new_tokens=max_new_tokens, top_p=top_p, t
         )
 
     text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    text = text.split('### Answer: ')
-    print(text[1])
-    match = re.search(r'\[\[(\w)\]\]', text[1])
-    if not match:
-        match = re.search(r"\[(\w)\]", text[1])
-    if not match:
-        match = re.search(r"([ABCD]).", text[1])
+    match = re.search(r'### Answer: ([ABCDabcd])', text)
+    # text = text.split('### Answer: ')
+    # print(text[1])
+    # match = re.search(r'\[\[(\w)\]\]', text[1])
+    # if not match:
+    #     match = re.search(r"\[(\w)\]", text[1])
+    # if not match:
+    #     match = re.search(r"([ABCD]).", text[1])
     
     # if not match:
     #     match = re.search(r"(\w).", text[1])
@@ -76,6 +77,7 @@ base_model_names = ['lmsys/vicuna-7b-v1.5',
                     'ehartford/Samantha-1.11-7b', 
                     'HuggingFaceH4/zephyr-7b-alpha', 
                     'lmsys/vicuna-7b-v1.5', 
+                    'ehartford/Samantha-1.11-7b',
                     'ehartford/Samantha-1.2-mistral-7b',
                     'HuggingFaceH4/zephyr-7b-alpha',
                     'mistralai/Mixtral-8x7B-v0.1',
@@ -88,6 +90,7 @@ adapter_dirs = ['vicuna-7b-gpt-1018',
                 'samantha111-7b-gpt-1022',
                 'zephyr-7b-gpt-1025',
                 'vicuna-7b-v1.5-phase2-1223',
+                'samantha-v1.1-7b-phase2-1226',
                 'samantha-v1.2-mistral-7b-phase2-1223', 
                 'zephyr-7b-alpha-phase2-1223',
                 'Mixtral-8x7B-v0.1-phase2-1223',
@@ -113,15 +116,27 @@ adapter_dirs = ['vicuna-7b-gpt-1018',
 #     "### Question:\n{input}\n\n### Response: "
 # )
 
+# prompt = (
+#     "Below is a multiple choice question with four choices A, B, C, D (or a, b, c, d). Which choice is the most correct?"
+#     "Output your answer choice by strictly following this format: "
+#     "\"[[A]]\" if choice A (or choice a) is the most correct, \"[[B]]\" if choice B (or choice b) is the most correct. \"[[C]]\" if choice C (or choice c) is the most correct. and \"[[D]]\" if choice D (or choice d) is the most correct."
+#     "Please output exactly one letter choice. \n\n"
+#     "Below is an example question and response. Please output your answer following exactly the response format in the example:\n"
+#     "Question:\nThe adverse effect of clozapine is: A. Hypertension. B. Sialorrhea. C. Extrapyramidal S/E. D. Neuroleptic malignant syndrome.\n\n"
+#     "Answer: B\n\n"
+#     "### Question:\n{input}\n\n### Answer: "
+# )
+
 prompt = (
-    "Below is a multiple choice question with four choices A, B, C, D (or a, b, c, d). Which choice is the most correct?"
-    "Output your answer choice by strictly following this format: "
-    "\"[[A]]\" if choice A (or choice a) is the most correct, \"[[B]]\" if choice B (or choice b) is the most correct. \"[[C]]\" if choice C (or choice c) is the most correct. and \"[[D]]\" if choice D (or choice d) is the most correct."
-    "Please output exactly one letter choice. \n\n"
-    "Below is an example question and response. Please output your answer following exactly the response format in the example:\n"
-    "Question:\nThe adverse effect of clozapine is: A. Hypertension. B. Sialorrhea. C. Extrapyramidal S/E. D. Neuroleptic malignant syndrome.\n\n"
+    "The following are multiple choice questions (with answers)\n"  
+    "Question: A patient who was admitted yesterday with an adjustment disorder and depressed mood has not left his or her room. The psychiatric-mental health nurse's most appropriate approach at meal time today is to respond: A. 'I will bring your tray to your room, if it will make you more comfortable.' B.'I will walk with you to the dining room and sit with you while you eat.' C.'Where would you like to eat your meal this noon?' D.'You will feel better if you go to the dining room and eat with the others.'\n"
     "Answer: B\n\n"
-    "### Question:\n{input}\n\n### Answer: "
+    "Question: A 17-year-old, female patient with anorexia nervosa has just been released from the hospital. To facilitate recovery at home, the psychiatric-mental health nurse instructs the family to: A.discourage the patient from sneaking food between meals, by unobtrusively reducing her access to the kitchen. B. encourage the patient's interest in menu planning, food magazines, and cooking lessons, by leaving information and materials around the house. C. permit the patient to eat her meals privately in her bedroom to discourage family preoccupation with meals. D. recommend that the patient joins in routine family meals and clears the dishes after dinner, even if she does not eat.\n"
+    "Answer: D\n\n"
+    "Question: A supervisor observes inconsistency in the psychiatric-mental health nurse's behavior toward a patient; the nurse is unreasonably concerned, overly kind, or irrationally hostile. The most appropriate explanation is that the nurse is displaying: A.countertransference. B.empathic resonance. C.splitting behavior. D.transference.\n"
+    "Answer: A\n\n"
+    "Please provide the answer (A, B, C or D) for the following Question:\n"
+    "### Question: {input}\n### Answer: "
 )
 
 # instruction = (

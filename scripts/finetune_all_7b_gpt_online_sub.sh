@@ -16,12 +16,11 @@ jid=$(qsub \
       -terse \
       -M "jiaxu7@upenn.edu,jiaxu@alumni.upenn.edu,tywei@seas.upenn.edu" \
       -m bea \
-      -l A40 \
-      -l h_vmem=50G \
-      -l h_rt=12:00:00 \
-      -o ${main_dir}/logs/phase2_generate/all_models_mc_\$JOB_ID.stdout \
-      -e ${main_dir}/logs/phase2_generate/all_models_mc_\$JOB_ID.stderr \
-      ${main_dir}/scripts/generate_qlora_mc_7b.sh \
+      -l A100 \
+      -l h_vmem=100G \
+      -o ${main_dir}/logs/gpt_online/finetune_all_7b_gpt_online_0104_\$JOB_ID.stdout \
+      -e ${main_dir}/logs/gpt_online/finetune_all_7b_gpt_online_0104_\$JOB_ID.stderr \
+      ${main_dir}/scripts/finetune_all_7b_gpt_online.sh \
       )
 
 echo -e "Job ID                           : $jid\n"

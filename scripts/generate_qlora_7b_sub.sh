@@ -16,10 +16,11 @@ jid=$(qsub \
       -terse \
       -M "jiaxu7@upenn.edu,jiaxu@alumni.upenn.edutywei@seas.upenn.edu" \
       -m bea \
-      -l A100 \
+      -l A40 \
       -l h_vmem=100G \
-      -o ${main_dir}/logs/phase2_generate/all_models_\$JOB_ID.stdout \
-      -e ${main_dir}/logs/phase2_generate/all_models_\$JOB_ID.stderr \
+      -l h_rt=12:00:00 \
+      -o ${main_dir}/logs/generate/Mistral_models_gpt_\$JOB_ID.stdout \
+      -e ${main_dir}/logs/generate/Mistral_models_gpt_\$JOB_ID.stderr \
       ${main_dir}/scripts/generate_qlora_7b.sh \
       )
 

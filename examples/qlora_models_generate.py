@@ -58,30 +58,28 @@ def generate(model, instruction, input, prompt, max_new_tokens=max_new_tokens, t
     return text[0], text[1]
 
 user_dir = '/cbica/home/xjia/qlora/'
-base_model_names = ['lmsys/vicuna-7b-v1.5', 
-                    'ehartford/Samantha-1.2-mistral-7b', 
-                    'ehartford/Samantha-1.11-7b', 
-                    'HuggingFaceH4/zephyr-7b-alpha', 
-                    'lmsys/vicuna-7b-v1.5', 
-                    'ehartford/Samantha-1.2-mistral-7b',
-                    'HuggingFaceH4/zephyr-7b-alpha',
+base_model_names = [
+                    # 'lmsys/vicuna-7b-v1.5', 
+                    # 'ehartford/Samantha-1.2-mistral-7b', 
+                    # 'ehartford/Samantha-1.11-7b', 
+                    # 'HuggingFaceH4/zephyr-7b-alpha',
+                    'ehartford/Samantha-1.11-7b',
                     'mistralai/Mixtral-8x7B-v0.1',
                     'mistralai/Mistral-7B-Instruct-v0.2',
                     'mistralai/Mixtral-8x7B-Instruct-v0.1',
-                    'mistralai/Mistral-7B-v0.1',
-                    'EmoCareAI/ChatPsychiatrist']
-adapter_dirs = ['vicuna-7b-gpt-1018', 
-                'samantha12-7b-gpt-1022',
-                'samantha111-7b-gpt-1022',
-                'zephyr-7b-gpt-1025',
-                'vicuna-7b-v1.5-phase2-1223',
-                'samantha-v1.2-mistral-7b-phase2-1223', 
-                'zephyr-7b-alpha-phase2-1223',
-                'Mixtral-8x7B-v0.1-phase2-1223',
-                'Mistral-7B-Instruct-v0.2-phase2-1223',
-                'Mixtral-8x7B-Instruct-v0.1-phase2-1223',
-                'Mistral-7B-v0.1-phase2-1223',
-                '']
+                    'mistralai/Mistral-7B-v0.1']
+                    # 'EmoCareAI/ChatPsychiatrist']
+adapter_dirs = [
+                # 'vicuna-7b-gpt-online-0104', 
+                # 'samantha12-7b-gpt-online-0104',
+                # 'samantha111-7b-gpt-online-0104',
+                # 'zephyr-7b-gpt-online-0104',
+                'samantha-v1.1-7b-phase2-1226',
+                'Mixtral-8x7B-v0.1-gpt-0104',
+                'Mistral-7B-Instruct-v0.2-gpt-0104',
+                'Mixtral-8x7B-Instruct-v0.1-gpt-0104',
+                'Mistral-7B-v0.1-gpt-0104']
+                # '']
 
 prompt = (
     "Below is an instruction that describes a task, paired with an input that provides further context. "
@@ -158,18 +156,19 @@ for base_model_name, adapter_dir in zip(base_model_names, adapter_dirs):
         _, response = generate(model, instruction, question["turns"][0], prompt, pad0=pad0)
         print(response)
 
-        choices_base = [{"index": 0, "turns": [base_response]}]
+        # Save response of base models  
+        # choices_base = [{"index": 0, "turns": [base_response]}]
+        # with open(join(user_dir, f"data/eval_jsonl/evalq_bench/model_answer/{base_model_name.split('/')[1]}.jsonl"), "a") as fout:
+        #     ans_json = {
+        #         "question_id": question["question_id"],
+        #         "answer_id": question["question_id"],
+        #         "model_id": base_model_name,
+        #         "choices": choices_base,
+        #         "tstamp": time.time(),
+        #     }
+        #     fout.write(json.dumps(ans_json) + "\n")
 
-        with open(join(user_dir, f"data/eval_jsonl/evalq_bench/model_answer/{base_model_name.split('/')[1]}.jsonl"), "a") as fout:
-            ans_json = {
-                "question_id": question["question_id"],
-                "answer_id": question["question_id"],
-                "model_id": base_model_name,
-                "choices": choices_base,
-                "tstamp": time.time(),
-            }
-            fout.write(json.dumps(ans_json) + "\n")
-
+        # Save response of finetuned models
         choices = [{"index": 0, "turns": [response]}]
         with open(join(user_dir, f"data/eval_jsonl/evalq_bench/model_answer/{adapter_dir}.jsonl"), "a") as fout:
             ans_json = {
