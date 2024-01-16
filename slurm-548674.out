@@ -1,0 +1,54 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"Python/3.8"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "Python/3.8"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+
+llm
+Namespace(__cached__setup_devices=device(type='cuda', index=0), _n_gpu=1, adafactor=False, adam8bit=False, adam_beta1=0.9, adam_beta2=0.999, adam_epsilon=1e-08, auto_find_batch_size=False, bf16=True, bf16_full_eval=False, bits=4, cache_dir=None, data_seed=42, dataloader_drop_last=False, dataloader_num_workers=1, dataloader_pin_memory=True, dataset='/net/pr2/projects/plgrid/plggllm/MentalGPT/data/lab/self_instruct_gpt3.5_instruction.csv', dataset_format=None, ddp_backend=None, ddp_broadcast_buffers=None, ddp_bucket_cap_mb=None, ddp_find_unused_parameters=None, ddp_timeout=1800, debug=[], deepspeed=None, deepspeed_plugin=None, disable_tqdm=False, distributed_state=Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+, do_eval=True, do_mmlu_eval=True, do_predict=False, do_train=True, double_quant=True, eval_accumulation_steps=None, eval_dataset_size=1024, eval_delay=0, eval_steps=187, evaluation_strategy=<IntervalStrategy.STEPS: 'steps'>, fp16=False, fp16_backend='auto', fp16_full_eval=False, fp16_opt_level='O1', fsdp=[], fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False}, fsdp_min_num_params=0, fsdp_transformer_layer_cls_to_wrap=None, full_determinism=False, full_finetune=False, generation_config=GenerationConfig {
+  "max_new_tokens": 32,
+  "transformers_version": "4.31.0"
+}
+, generation_max_length=None, generation_num_beams=None, gradient_accumulation_steps=16, gradient_checkpointing=True, greater_is_better=None, group_by_length=True, half_precision_backend='auto', hub_model_id=None, hub_private_repo=False, hub_strategy=<HubStrategy.EVERY_SAVE: 'every_save'>, hub_token=None, ignore_data_skip=False, include_inputs_for_metrics=False, jit_mode_eval=False, label_names=None, label_smoothing_factor=0.0, learning_rate=0.0002, length_column_name='length', load_best_model_at_end=False, local_rank=0, log_level='passive', log_level_replica='warning', log_on_each_node=True, logging_dir='./output/llama-2-guanaco-7b/runs/Jan12_16-57-26_t0033', logging_first_step=False, logging_nan_inf_filter=True, logging_steps=10, logging_strategy=<IntervalStrategy.STEPS: 'steps'>, lora_alpha=16.0, lora_dropout=0.1, lora_r=64, lr_scheduler_type=<SchedulerType.CONSTANT: 'constant'>, max_eval_samples=1000, max_grad_norm=0.3, max_memory_MB=80000, max_mmlu_samples=None, max_steps=1875, max_train_samples=None, metric_for_best_model=None, mmlu_dataset='mmlu-fs', mmlu_source_max_len=2048, mmlu_split='eval', model_name_or_path='meta-llama/Llama-2-7b-hf', mp_parameters='', no_cuda=False, num_train_epochs=3.0, optim=<OptimizerNames.PAGED_ADAMW: 'paged_adamw_32bit'>, optim_args=None, output_dir='./output/llama-2-guanaco-7b', overwrite_output_dir=False, past_index=-1, per_device_eval_batch_size=1, per_device_train_batch_size=1, per_gpu_eval_batch_size=None, per_gpu_train_batch_size=None, predict_with_generate=False, prediction_loss_only=False, push_to_hub=False, push_to_hub_model_id=None, push_to_hub_organization=None, push_to_hub_token=None, quant_type='nf4', ray_scope='last', remove_unused_columns=False, report_to=[], resume_from_checkpoint=None, run_name='./output/llama-2-guanaco-7b', save_on_each_node=False, save_safetensors=False, save_steps=500, save_strategy=<IntervalStrategy.STEPS: 'steps'>, save_total_limit=40, seed=0, sharded_ddp=[], skip_memory_metrics=True, sortish_sampler=False, source_max_len=16, target_max_len=512, tf32=None, torch_compile=False, torch_compile_backend=None, torch_compile_mode=None, torchdynamo=None, tpu_metrics_debug=False, tpu_num_cores=None, train_on_source=False, trust_remote_code=False, use_auth_token=True, use_ipex=False, use_legacy_prediction_loop=False, use_mps_device=False, warmup_ratio=0.03, warmup_steps=0, weight_decay=0.0, xpu_backend=None)
+loading base model meta-llama/Llama-2-7b-hf...
+Traceback (most recent call last):
+  File "qlora.py", line 841, in <module>
+    train()
+  File "qlora.py", line 704, in train
+    model, tokenizer = get_accelerate_model(args, checkpoint_dir)
+  File "qlora.py", line 311, in get_accelerate_model
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/transformers/models/auto/auto_factory.py", line 461, in from_pretrained
+    config, kwargs = AutoConfig.from_pretrained(
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/transformers/models/auto/configuration_auto.py", line 983, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/transformers/configuration_utils.py", line 617, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/transformers/configuration_utils.py", line 672, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/transformers/utils/hub.py", line 417, in cached_file
+    resolved_file = hf_hub_download(
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/huggingface_hub/file_download.py", line 1223, in hf_hub_download
+    headers = build_hf_headers(
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/huggingface_hub/utils/_headers.py", line 121, in build_hf_headers
+    token_to_send = get_token_to_send(token)
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/huggingface_hub/utils/_headers.py", line 153, in get_token_to_send
+    raise LocalTokenNotFoundError(
+huggingface_hub.utils._headers.LocalTokenNotFoundError: Token is required (`token=True`), but no token found. You need to provide a token or be logged in to Hugging Face with `huggingface-cli login` or `huggingface_hub.login`. See https://huggingface.co/settings/tokens.
+srun: error: t0033: task 0: Exited with exit code 1

@@ -1,0 +1,26 @@
+ CUDA/12.0.0 loaded.
+Lmod has detected the following error: The following module(s) are unknown:
+"Python/3.8"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "Python/3.8"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+
+llm
+Traceback (most recent call last):
+  File "qlora.py", line 15, in <module>
+    import bitsandbytes as bnb
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/__init__.py", line 6, in <module>
+    from . import cuda_setup, utils, research
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/utils.py", line 3, in <module>
+    import torch
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/torch/__init__.py", line 235, in <module>
+    from torch._C import *  # noqa: F403
+ImportError: /net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/torch/lib/../../nvidia/cusparse/lib/libcusparse.so.12: undefined symbol: __nvJitLinkAddData_12_1, version libnvJitLink.so.12
+srun: error: t0033: task 0: Exited with exit code 1

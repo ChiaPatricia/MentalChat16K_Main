@@ -1,0 +1,44 @@
+llm
+
+===================================BUG REPORT===================================
+Welcome to bitsandbytes. For bug reports, please run
+
+python -m bitsandbytes
+
+ and submit this information together with your error trace to: https://github.com/TimDettmers/bitsandbytes/issues
+================================================================================
+Traceback (most recent call last):
+  File "qlora.py", line 15, in <module>
+    import bitsandbytes as bnb
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/__init__.py", line 6, in <module>
+    from . import cuda_setup, utils, research
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/research/__init__.py", line 1, in <module>
+    from . import nn
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/research/nn/__init__.py", line 1, in <module>
+    from .modules import LinearFP8Mixed, LinearFP8Global
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/research/nn/modules.py", line 8, in <module>
+    from bitsandbytes.optim import GlobalOptimManager
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/optim/__init__.py", line 6, in <module>
+    from bitsandbytes.cextension import COMPILED_WITH_CUDA
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/cextension.py", line 13, in <module>
+    setup.run_cuda_setup()
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/cuda_setup/main.py", line 105, in run_cuda_setup
+    binary_name, cudart_path, cuda, cc, cuda_version_string = evaluate_cuda_setup()
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/cuda_setup/main.py", line 386, in evaluate_cuda_setup
+    cudart_path = determine_cuda_runtime_lib_path()
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/cuda_setup/main.py", line 271, in determine_cuda_runtime_lib_path
+    cuda_runtime_libs.update(find_cuda_lib_in(value))
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/cuda_setup/main.py", line 212, in find_cuda_lib_in
+    resolve_paths_list(paths_list_candidate)
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/cuda_setup/main.py", line 207, in resolve_paths_list
+    return remove_non_existent_dirs(extract_candidate_paths(paths_list_candidate))
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/cuda_setup/main.py", line 183, in remove_non_existent_dirs
+    raise exc
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/site-packages/bitsandbytes/cuda_setup/main.py", line 179, in remove_non_existent_dirs
+    if path.exists():
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/pathlib.py", line 1407, in exists
+    self.stat()
+  File "/net/pr2/projects/plgrid/plggllm/anaconda3/envs/llm/lib/python3.8/pathlib.py", line 1198, in stat
+    return self._accessor.stat(self)
+PermissionError: [Errno 13] Permission denied: '/opt/cyfronet/hpcbursar.venv/lib/python3.9/site-packages'
+srun: error: t0033: task 0: Exited with exit code 1

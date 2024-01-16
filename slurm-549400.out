@@ -1,0 +1,26 @@
+ CUDA/12.0.0 loaded.
+Lmod has detected the following error: The following module(s) are unknown:
+"Python/3.8"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "Python/3.8"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+
+llm
+Traceback (most recent call last):
+  File "/net/pr2/projects/plgrid/plggllm/MentalGPT/qlora.py", line 15, in <module>
+    import bitsandbytes as bnb
+  File "/net/pr2/projects/plgrid/plggllm/lib/python3.9/site-packages/bitsandbytes/__init__.py", line 6, in <module>
+    from . import cuda_setup, utils, research
+  File "/net/pr2/projects/plgrid/plggllm/lib/python3.9/site-packages/bitsandbytes/utils.py", line 4, in <module>
+    import torch
+  File "/net/pr2/projects/plgrid/plggllm/lib64/python3.9/site-packages/torch/__init__.py", line 235, in <module>
+    from torch._C import *  # noqa: F403
+ImportError: libcudnn.so.8: cannot open shared object file: No such file or directory
+srun: error: t0016: task 0: Exited with exit code 1

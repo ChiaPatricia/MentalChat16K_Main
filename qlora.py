@@ -43,6 +43,7 @@ from peft import (
 from peft.tuners.lora import LoraLayer
 from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 
+ACCESS_TOKEN = "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"
 
 def is_ipex_available():
     def get_major_and_minor_from_version(full_version):
@@ -326,7 +327,8 @@ def get_accelerate_model(args, checkpoint_dir):
         ),
         torch_dtype=(torch.float32 if args.fp16 else (torch.bfloat16 if args.bf16 else torch.float32)),
         trust_remote_code=args.trust_remote_code,
-        use_auth_token=args.use_auth_token
+        use_auth_token=args.use_auth_token, 
+        # token=ACCESS_TOKEN
     )
     if compute_dtype == torch.float16 and args.bits == 4:
         if torch.cuda.is_bf16_supported():
@@ -638,6 +640,7 @@ def make_data_module(tokenizer: transformers.PreTrainedTokenizer, args) -> Dict:
 
     # Split train/eval, reduce size
     if args.do_eval or args.do_predict:
+        # import pdb;pdb.set_trace()
         if 'eval' in dataset:
             eval_dataset = dataset['eval']
         else:
@@ -650,6 +653,7 @@ def make_data_module(tokenizer: transformers.PreTrainedTokenizer, args) -> Dict:
             eval_dataset = eval_dataset.select(range(args.max_eval_samples))
         if args.group_by_length:
             eval_dataset = eval_dataset.map(lambda x: {'length': len(x['input']) + len(x['output'])})
+    
     if args.do_train:
         train_dataset = dataset['train']
         if args.max_train_samples is not None and len(train_dataset) > args.max_train_samples:
