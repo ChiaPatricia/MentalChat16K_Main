@@ -19,8 +19,8 @@ jid=$(qsub \
       -l A40 \
       -l h_vmem=100G \
       -l h_rt=12:00:00 \
-      -o ${main_dir}/logs/generate/Mistral_models_gpt_\$JOB_ID.stdout \
-      -e ${main_dir}/logs/generate/Mistral_models_gpt_\$JOB_ID.stderr \
+      -o ${main_dir}/logs/phase2_generate/all_models_gpt_online_\$JOB_ID.stdout \
+      -e ${main_dir}/logs/phase2_generate/all_models_gpt_online_\$JOB_ID.stderr \
       ${main_dir}/scripts/generate_qlora_7b.sh \
       )
 

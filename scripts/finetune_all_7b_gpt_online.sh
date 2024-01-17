@@ -153,7 +153,8 @@ python qlora.py \
     --logging_steps 10 \
     --save_strategy steps \
     --data_seed 42 \
-    --save_steps 275 \
+    --save_steps 
+     \
     --save_total_limit 40 \
     --evaluation_strategy steps \
     --eval_dataset_size 1024 \

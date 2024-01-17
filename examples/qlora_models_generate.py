@@ -59,22 +59,22 @@ def generate(model, instruction, input, prompt, max_new_tokens=max_new_tokens, t
 
 user_dir = '/cbica/home/xjia/qlora/'
 base_model_names = [
-                    # 'lmsys/vicuna-7b-v1.5', 
-                    # 'ehartford/Samantha-1.2-mistral-7b', 
-                    # 'ehartford/Samantha-1.11-7b', 
-                    # 'HuggingFaceH4/zephyr-7b-alpha',
-                    'ehartford/Samantha-1.11-7b',
+                    'lmsys/vicuna-7b-v1.5', 
+                    'ehartford/Samantha-1.2-mistral-7b', 
+                    'ehartford/Samantha-1.11-7b', 
+                    'HuggingFaceH4/zephyr-7b-alpha',
+                    # 'ehartford/Samantha-1.11-7b',
                     'mistralai/Mixtral-8x7B-v0.1',
                     'mistralai/Mistral-7B-Instruct-v0.2',
                     'mistralai/Mixtral-8x7B-Instruct-v0.1',
                     'mistralai/Mistral-7B-v0.1']
                     # 'EmoCareAI/ChatPsychiatrist']
 adapter_dirs = [
-                # 'vicuna-7b-gpt-online-0104', 
-                # 'samantha12-7b-gpt-online-0104',
-                # 'samantha111-7b-gpt-online-0104',
-                # 'zephyr-7b-gpt-online-0104',
-                'samantha-v1.1-7b-phase2-1226',
+                'vicuna-7b-gpt-online-0104', 
+                'samantha12-7b-gpt-online-0104',
+                'samantha111-7b-gpt-online-0104',
+                'zephyr-7b-gpt-online-0104',
+                # 'samantha-v1.1-7b-phase2-1226',
                 'Mixtral-8x7B-v0.1-gpt-0104',
                 'Mistral-7B-Instruct-v0.2-gpt-0104',
                 'Mixtral-8x7B-Instruct-v0.1-gpt-0104',
